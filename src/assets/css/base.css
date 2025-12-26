@@ -90,7 +90,7 @@ html {
   font-weight: 500;
   color: #fff;
   position: relative;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   padding-bottom: 1px !important;
   font-family: 'Urbanist', sans-serif;
 }
@@ -102,7 +102,23 @@ html {
 }
 
 .nav-link:hover {
-  color: #fff;
+  color: #FFCF40 !important;
+  transform: translateY(-2px);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FFCF40;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
 }
 
 .nav-link:hover .underline {
@@ -113,11 +129,23 @@ html {
   width: 176px;
   height: 40px;
   object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .navbar-toggler {
   border: none;
   background: transparent;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .navbar-toggler-icon {
@@ -229,6 +257,12 @@ html {
 
 .headerMainImg {
   margin-left: -15px;
+  transition: all 0.3s ease;
+}
+
+.headerMainImg:hover {
+  transform: translateY(-10px) scale(1.02);
+  filter: brightness(1.05);
 }
 
 /* Emirati Hub Hero Section */
@@ -240,6 +274,12 @@ html {
   color: #ffffff;
   margin-bottom: 0;
   text-align: center;
+  transition: all 0.3s ease;
+}
+
+.emirati-hero-heading:hover {
+  transform: scale(1.02);
+  text-shadow: 0 0 20px rgba(255, 207, 64, 0.3);
 }
 
 /* Crown Button */
@@ -269,6 +309,11 @@ html {
   width: 29px;
   height: 25px;
   object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.emirati-crown-btn:hover .crown-icon {
+  transform: rotate(15deg) scale(1.1);
 }
 
 .header-txt1 {
@@ -292,7 +337,7 @@ html {
   background-position: right top, left bottom;
   background-size: contain, 100% 100%;
   background-color: #ffffff;
-  min-height: 85vh;
+  min-height: 70vh;
   position: relative;
   overflow: visible;
 }
@@ -331,6 +376,12 @@ html {
   font-weight: 700;
   color: #000000;
   margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.careers-section-heading:hover {
+  color: #0C479A;
+  transform: scale(1.02);
 }
 
 .careers-section-description {
@@ -341,6 +392,12 @@ html {
   max-width: 800px;
   margin: 0 auto;
   line-height: 28px;
+  transition: all 0.3s ease;
+}
+
+.careers-section-description:hover {
+  color: #0C479A;
+  transform: scale(1.01);
 }
 
 .career-card {
@@ -378,6 +435,11 @@ html {
   height: 32px;
   object-fit: contain;
   filter: brightness(0) invert(1);
+  transition: all 0.3s ease;
+}
+
+.career-card:hover .career-icon {
+  transform: scale(1.15) rotate(5deg);
 }
 
 .career-content {
@@ -391,6 +453,12 @@ html {
   color: #000000;
   margin-bottom: 8px;
   line-height: 24px;
+  transition: all 0.3s ease;
+}
+
+.career-card:hover .career-title {
+  color: #0C479A;
+  transform: translateX(5px);
 }
 
 .career-jobs {
@@ -399,6 +467,12 @@ html {
   font-weight: 500;
   color: #636363;
   margin: 0;
+  transition: all 0.3s ease;
+}
+
+.career-card:hover .career-jobs {
+  color: #0C479A;
+  font-weight: 600;
 }
 
 /* Unique color classes for each icon wrapper */
@@ -515,6 +589,12 @@ html {
   max-width: 320px;
   height: auto;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s ease;
+}
+
+.phone-mockup-large:hover {
+  transform: translateY(-15px) scale(1.05);
+  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.25));
 }
 
 .phone-mockup-large-blue {
@@ -525,6 +605,12 @@ html {
   max-width: 320px;
   height: auto;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  transition: all 0.3s ease;
+}
+
+.phone-mockup-large-blue:hover {
+  transform: translateY(-15px) scale(1.05);
+  filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.25));
 }
 
 /* Company App Section */
@@ -590,7 +676,7 @@ html {
 
 .download-app-img {
   position: absolute;
-  bottom: 0;
+  bottom: -259px;
   left: 5%;
   width: 100%;
   max-width: 331px;
@@ -614,6 +700,12 @@ html {
   color: #ffffff;
   margin-bottom: 24px;
   line-height: 52px;
+  transition: all 0.3s ease;
+}
+
+.download-app-title:hover {
+  transform: scale(1.02);
+  text-shadow: 0 0 15px rgba(255, 207, 64, 0.3);
 }
 
 .download-app-title-highlight {
@@ -641,11 +733,13 @@ html {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .download-store-link {
   display: inline-block;
   transition: all 0.3s ease;
+  align-self: center;
 }
 
 .download-store-link:hover {
@@ -654,11 +748,11 @@ html {
 }
 
 .store-button-img {
-  height: 100%;
-  max-height: 46px;
-  width: 100%;
+  height: 46px;
+  width: auto;
   max-width: 148px;
   display: block;
+  object-fit: contain;
 }
 
 /* Mobile adjustments */
@@ -804,10 +898,25 @@ html {
     width: 85% !important;
 }
 
+.careers-last-row-wrapper .col-md-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
   .header-banner {
-    margin-top: 20px !important;
+    margin-top: 0px !important;
     padding: 40px 15px !important;
     min-height: 350px !important;
+  }
+
+  .careers-grid > [class*="col-"] {
+    display: flex;
+    justify-content: center;
+  }
+
+  .headerMainImg {
+    margin-left: 0px !important;
   }
   
   .header-txt1 h1 {
@@ -868,16 +977,18 @@ html {
   /* Download App Section Mobile */
   .download-app-section {
     padding: 60px 0 !important;
+    margin-top: 50px;
+    border-radius: 0px;
   }
 
   .download-app-title {
-    font-size: 32px !important;
+    font-size: 26px !important;
     line-height: 42px !important;
     text-align: center;
   }
 
   .download-app-title-highlight {
-    font-size: 36px !important;
+    font-size: 26px !important;
     margin-top: 8px;
   }
 
@@ -888,17 +999,20 @@ html {
   }
 
   .download-app-buttons {
-  justify-content: center;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
-}
+  }
 
   .store-button-img {
-    height: 50px;
-}
+    height: 46px;
+    width: auto;
+    max-width: 148px;
+    object-fit: contain;
+  }
 
   .download-app-img {
-  max-width: 280px;
-    margin-bottom: 40px;
+  display: none;
   }
 
   .download-app-content {
@@ -932,6 +1046,34 @@ html {
 
   .phone-mockup-large {
     max-width: 250px;
+    left: 19%;
+  }
+  .none {
+    display: none;
+  }
+
+  .employee-app-section-right-column {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 50px;
+  }
+
+  .employee-app-section-right-column .app-section-content {
+    margin-left: 0px !important;
+  }
+
+  .employee-app-section .company-app-section-left-column {
+    margin-bottom: 50px;
+  }
+
+  .phone-mockup-large-blue {
+    left: 19%;
+    max-width: 250px;
+  }
+
+  .app-section-detail {
+    font-size: 20px;
   }
 
   .employee-small-phone {
@@ -1034,6 +1176,12 @@ html {
   width: 389px;
   height: 62px;
   object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
 }
 
 .footer-company-name {
@@ -1055,6 +1203,12 @@ html {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  transition: all 0.3s ease;
+}
+
+.footer-main-text:hover {
+  color: #FFCF40;
+  transform: scale(1.02);
 }
 
 .footer-nav-links {
@@ -1083,14 +1237,20 @@ html {
 
 .footer-copyright-text {
   font-family: 'Urbanist', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.footer-copyright-text:hover {
+  color: #FFCF40;
+  transform: translateX(5px);
 }
 
 .footer-devicebee {
   color: #FFCF40;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footer-contact-info {
@@ -1115,6 +1275,21 @@ html {
   height: 16px;
   object-fit: contain;
   flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-contact-item:hover .footer-contact-icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: brightness(1.3);
+}
+
+.footer-contact-item:hover span {
+  color: #FFCF40;
+  transform: translateX(5px);
+}
+
+.footer-contact-item span {
+  transition: all 0.3s ease;
 }
 
 .footer-policy-links {

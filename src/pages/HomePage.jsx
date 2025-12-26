@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 
 import crownImg from "../assets/images/crown.png";
 import headerImg from "../assets/images/header-main-img.png";
+import appSsImg from "../assets/images/app-ss.png";
 
 import marketingImg from "../assets/images/marketing.png";
 import designImg from "../assets/images/design.png";
@@ -38,9 +39,20 @@ import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
 
 import ApiService from "../services/ApiService";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const HomePage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false,
+    });
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -117,7 +129,7 @@ const HomePage = () => {
                     data-aos-delay="100"
                   >
                     <h1 className="emirati-hero-heading text-white">
-                      Premium Job Platform Only <br /> For UAE Nationals
+                      Premium Job Platform Only <br className="none" /> For UAE Nationals
                     </h1>
                   </div>
                   <div
@@ -131,8 +143,9 @@ const HomePage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="mt-5">
-                  <img src={headerImg} className="w-100 headerMainImg" alt="" />
+                <div className="mt-5" data-aos="fade-up" data-aos-delay="300">
+                  <img src={headerImg} className="w-100 headerMainImg d-none d-md-block" alt="" />
+                  <img src={appSsImg} className="w-100 headerMainImg d-block d-md-none" alt="" />
                 </div>
               </div>
             </div>
@@ -142,7 +155,7 @@ const HomePage = () => {
 
       {/* Explore Careers Section */}
       <div className="container py-5 careers-section" id="careers">
-        <div className="text-center mb-5">
+        <div className="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
           <h2 className="careers-section-heading">
             Explore Careers Across Every Field
           </h2>
@@ -155,7 +168,7 @@ const HomePage = () => {
 
         <div className="row g-4 careers-grid">
           {/* Row 1 */}
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-marketing">
                 <img
@@ -171,7 +184,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="250">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-design">
                 <img src={designImg} alt="Design" className="career-icon" />
@@ -183,7 +196,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-humsn">
                 <img
@@ -199,7 +212,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="350">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-finance">
                 <img src={financeImg} alt="Finance" className="career-icon" />
@@ -212,7 +225,7 @@ const HomePage = () => {
           </div>
 
           {/* Row 2 */}
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="400">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-health">
                 <img src={healthImg} alt="Healthcare" className="career-icon" />
@@ -224,7 +237,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="450">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-armforce">
                 <img
@@ -242,7 +255,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="500">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-business">
                 <img src={businessImg} alt="Business" className="career-icon" />
@@ -254,7 +267,7 @@ const HomePage = () => {
             </div>
           </div>
 
-          <div className="col-md-3 col-sm-6">
+          <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="550">
             <div className="career-card">
               <div className="career-icon-wrapper career-icon-legal">
                 <img src={legalImg} alt="Legal" className="career-icon" />
@@ -266,10 +279,10 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Row 3 - Centered */}
+          {/* Row 3 */}
           <div className="col-12 careers-last-row-wrapper">
             <div className="row g-4 justify-content-center">
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="600">
                 <div className="career-card">
                   <div className="career-icon-wrapper career-icon-airport">
                     <img
@@ -285,7 +298,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="650">
                 <div className="career-card">
                   <div className="career-icon-wrapper career-icon-project">
                     <img
@@ -301,7 +314,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              <div className="col-md-3 col-sm-6">
+              <div className="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="700">
                 <div className="career-card">
                   <div className="career-icon-wrapper career-icon-manufacture">
                     <img
@@ -322,10 +335,10 @@ const HomePage = () => {
       </div>
 
       {/* Employee App Section */}
-      <div className="container py-5 employee-app-section">
+      <div className="container py-5 employee-app-section" id="employeeApp">
         <div className="row align-items-center">
           {/* Left Column - Text Content */}
-          <div className="col-lg-6 position-relative">
+          <div className="col-lg-6 position-relative" data-aos="fade-right" data-aos-delay="100">
             <div className="employee-img">
               <div className="employee-large-phone">
                 <img
@@ -338,19 +351,19 @@ const HomePage = () => {
           </div>
 
           {/* Right Column - Large Yellow Phone */}
-          <div className="col-lg-6">
-            <div className="ms-5">
+          <div className="col-lg-6 employee-app-section-right-column" data-aos="fade-left" data-aos-delay="200">
+            <div className="ms-5 app-section-content">
               <h2 className="app-section-title">Employee App</h2>
               <p className="app-section-detail">
-                But I must explain to you how all this mistaken <br /> idea of
+                But I must explain to you how all this mistaken <br className="none" /> idea of
                 denouncing pleasure.
               </p>
               <p className="app-section-description">
                 Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                <br />
-                accusantium doloremque laudantium, totam rembe aperiam, <br />
+                <br className="none" />
+                accusantium doloremque laudantium, totam rembe aperiam, <br className="none" />
                 eaque ipsa quae ab illo inventore veritatis eat quai architecto
-                <br /> beatae expound the actual teachings of the great.
+                <br className="none" /> beatae expound the actual teachings of the great.
               </p>
               <button className="btn app-cta-btn mt-4 rounded-pill">
                 Create Account
@@ -361,21 +374,21 @@ const HomePage = () => {
       </div>
 
       {/* Company App Section */}
-      <div className="container py-5 employee-app-section">
+      <div className="container py-5 employee-app-section" id="companyApp">
         <div className="row align-items-center">
           {/* Left Column */}
-          <div className="col-lg-6">
+          <div className="col-lg-6 company-app-section-left-column" data-aos="fade-right" data-aos-delay="100">
             <h2 className="app-section-title">Company App</h2>
             <p className="app-section-detail">
-              But I must explain to you how all this mistaken <br /> idea of
+              But I must explain to you how all this mistaken <br className="none" /> idea of
               denouncing pleasure.
             </p>
             <p className="app-section-description">
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              <br />
-              accusantium doloremque laudantium, totam rembe aperiam, <br />
+              <br className="none" />
+              accusantium doloremque laudantium, totam rembe aperiam, <br className="none" />
               eaque ipsa quae ab illo inventore veritatis eat quai architecto
-              <br /> beatae expound the actual teachings of the great.
+              <br className="none" /> beatae expound the actual teachings of the great.
             </p>
             <button className="btn app-cta-btn mt-4 rounded-pill">
               Create Account
@@ -383,7 +396,7 @@ const HomePage = () => {
           </div>
 
           {/* Right Column */}
-          <div className="col-lg-6 position-relative">
+          <div className="col-lg-6 position-relative" data-aos="fade-left" data-aos-delay="200">
             <div className="company-img">
               <div className="employee-large-phone">
                 <img
@@ -398,17 +411,17 @@ const HomePage = () => {
       </div>
 
       {/* Download App Section */}
-      <div className="download-app-section container position-relative">
+      <div className="download-app-section container position-relative" id="downloadApp">
         <div className="">
           <div className="row align-items-center">
-            <div className="col-lg-5">
+            <div className="col-lg-5" data-aos="fade-right" data-aos-delay="100">
               <img
                 src={helpAppImg}
                 alt="App Screenshot"
                 className="download-app-img"
               />
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-7" data-aos="fade-left" data-aos-delay="200">
               <div className="download-app-content">
                 <h2 className="download-app-title">
                   Emirati Hub help to
@@ -416,12 +429,12 @@ const HomePage = () => {
                     <span className="download-app-title-highlight-only">
                       Only Emirati
                     </span>{" "}
-                    Nationals Best <br /> Find Jobs Opportunities
+                    Nationals Best <br className="none" /> Find Jobs Opportunities
                   </span>
                 </h2>
                 <p className="download-app-description">
                   Sed ut perspiatis unde omnis iste natus error voluptatem
-                  accusant <br /> ium doloremque site laudan lipsum dummy text
+                  accusant <br className="none" /> ium doloremque site laudan lipsum dummy text
                   provider.
                 </p>
                 <div className="download-app-buttons">

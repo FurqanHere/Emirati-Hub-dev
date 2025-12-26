@@ -32,7 +32,7 @@ export default function Navbar({ background = "" }) {
       <nav className={`navbar navbar-expand-lg ${background} ${isScrolled ? 'navbar-fixed' : ''}`}>
         <div className="container navbar-container">
           {/* Logo - Left */}
-          <Link className="navbar-brand navbar-logo" to="/" data-scroll-animation="fade-down" data-scroll-delay="100">
+          <Link className="navbar-brand navbar-logo" to="/" data-aos="fade-down" data-aos-delay="100">
             <img src={logo} alt="EMIRATI HUB" className="logo" />
         </Link>
 
@@ -46,14 +46,14 @@ export default function Navbar({ background = "" }) {
         </button>
 
           {/* Menu Links - Center */}
-          <div className="navbar-nav-center d-none d-lg-flex" data-scroll-animation="fade-down" data-scroll-delay="200">
+          <div className="navbar-nav-center d-none d-lg-flex" data-aos="fade-down" data-aos-delay="200">
             <ul className="navbar-nav">
               {links.map((l, index) => (
               <li
                 className="nav-item"
                 key={l.path}
-                  data-scroll-animation="fade-down"
-                  data-scroll-delay={300 + (index * 50)}
+                  data-aos="fade-down"
+                  data-aos-delay={300 + (index * 50)}
               >
                   {l.type === "route" ? (
                     <Link
@@ -83,7 +83,7 @@ export default function Navbar({ background = "" }) {
           </div>
 
           {/* Get Started Button - Right */}
-          <div className="navbar-actions d-none d-lg-flex">
+          <div className="navbar-actions d-none d-lg-flex" data-aos="fade-down" data-aos-delay="500">
             <Link className="btn get-started-btn shadow rounded-pill" to="/#home">
               Get Started
             </Link>
@@ -99,7 +99,7 @@ export default function Navbar({ background = "" }) {
       >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title mb-0 d-flex align-items-center">
-            <img src={logo} alt="EMIRATI HUB" className="logo" />
+            <img src={logo} alt="EMIRATI HUB" className="logo" data-aos="fade-right" />
           </h5>
           <button
             type="button"

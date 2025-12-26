@@ -32,19 +32,19 @@ const Footer = () => {
       <div className="container py-5">
         {/* Logo and Company Name */}
         <div className="text-center mb-4">
-          <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
+          <div className="d-flex align-items-center justify-content-center gap-3 mb-3" data-aos="fade-up" data-aos-delay="100">
             <img src={logo} alt="EMIRATI HUB" className="footer-logo" />
           </div>
           
           {/* Main Text Block */}
-          <p className="footer-main-text">
+          <p className="footer-main-text" data-aos="fade-up" data-aos-delay="200">
             Sed ut perspiatis unde omnis iste natus error voluptatem accusant um doloremque
             <br />
             site headricks laudan lipsum dummy text provider.
           </p>
 
           {/* Navigation Links */}
-          <nav className="footer-nav-links">
+          <nav className="footer-nav-links" data-aos="fade-up" data-aos-delay="300">
             <button 
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('home')}
@@ -77,13 +77,13 @@ const Footer = () => {
       <div className="footer-bottom-bar">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-6 col-12 mb-3 mb-md-0">
+            <div className="col-md-8 col-12 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="400">
               <p className="footer-copyright-text mb-0">
                 © Copyright 2025 Emirati Hub. All rights reserved. Made with By{" "}
                 <span className="footer-devicebee">DeviceBee Technologies.</span>
               </p>
             </div>
-            <div className="col-md-6 col-12">
+            <div className="col-md-4 col-12" data-aos="fade-up" data-aos-delay="500">
               <div className="d-flex flex-column align-items-end gap-3">
                 {/* Contact Information - Row 1 */}
                 <div className="footer-contact-info">
