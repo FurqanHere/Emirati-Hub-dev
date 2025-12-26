@@ -1,0 +1,1181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Inter Font Family */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+/* Navbar container */
+.navbar {
+  position: relative;
+  padding: 15px 0;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  background-color: #073F9D;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+}
+
+.navbar-logo {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.navbar-nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.navbar-nav-center .navbar-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navbar-actions {
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.navbar.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: #073F9D;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-main {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  position: relative;
+  transition: color 0.3s ease;
+  padding-bottom: 1px !important;
+  font-family: 'Urbanist', sans-serif;
+}
+
+/* Active link */
+.nav-link.active {
+  color: #fff !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover .underline {
+  height: 3px;
+}
+
+.logo {
+  width: 176px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.nav-item {
+  cursor: pointer;
+  list-style: none;
+}
+
+.nav-underline {
+  width: 50px;
+  object-fit: contain;
+}
+
+/* Offcanvas (mobile menu) styles */
+.offcanvas {
+  background-color: #ffffff;
+}
+
+.offcanvas-header {
+  background-color: #0C479A;
+  border-radius: 0 0 20px 20px;
+  padding: 20px 20px 20px 20px !important;
+  margin-bottom: 0;
+}
+
+.offcanvas-header .offcanvas-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.offcanvas-header .logo {
+  filter: brightness(0) invert(1);
+}
+
+.offcanvas-body {
+  background-color: #ffffff;
+  padding: 20px !important;
+}
+
+.offcanvas .nav-link {
+  color: #1c1c1c !important;
+  font-weight: 600;
+  width: 100%;
+  padding: 10px 0 !important;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.offcanvas .nav-link.active {
+  color: #87CEEB !important;
+}
+
+.offcanvas .btn-link {
+  color: #1c1c1c !important;
+}
+
+.offcanvas .btn-link:hover {
+  color: #3F85DE !important;
+}
+
+/* Get Started Button */
+.get-started-btn {
+  background-color: #FFCF40 !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 12px 32px !important;
+  transition: all 0.3s ease !important;
+  font-size: 15px !important;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.get-started-btn:hover {
+  background-color: #FFD966 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 207, 64, 0.4);
+  color: #000000 !important;
+}
+
+.offcanvas .get-started-btn {
+  background-color: #FFCF40 !important;
+  color: #000000 !important;
+  border: none !important;
+  font-weight: 600 !important;
+  padding: 12px 20px !important;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.offcanvas .get-started-btn:hover {
+  background-color: #FFD966 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 207, 64, 0.4);
+  color: #000000 !important;
+}
+
+/* Home Page */
+.header-banner {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: #073F9D;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.headerMainImg {
+  margin-left: -15px;
+}
+
+/* Emirati Hub Hero Section */
+.emirati-hero-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 70px;
+  color: #ffffff;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+/* Crown Button */
+.emirati-crown-btn {
+  background-color: #FFCF40;
+  color: #000000;
+  border: none;
+  font-weight: 700;
+  padding: 16px 32px;
+  font-size: 19px;
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 207, 64, 0.3);
+  font-family: 'Urbanist', sans-serif;
+}
+
+.emirati-crown-btn:hover {
+  background-color: #FFD966 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 207, 64, 0.5);
+  color: #000000 !important;
+}
+
+.crown-icon {
+  width: 29px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.header-txt1 {
+  font-family: 'Urbanist', sans-serif;
+}
+
+.header-txt1 h1 {
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 70px;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.header-txt1 p {
+  margin: 15px 0;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.img1 {
+  background-repeat: no-repeat, no-repeat;
+  background-position: right top, left bottom;
+  background-size: contain, 100% 100%;
+  background-color: #ffffff;
+  min-height: 85vh;
+  position: relative;
+  overflow: visible;
+}
+
+/* Careers Section */
+.careers-section {
+  font-family: 'Urbanist', sans-serif;
+}
+
+.careers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.careers-grid > [class*="col-"] {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.careers-last-row-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.careers-last-row-wrapper .row {
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+}
+
+.careers-section-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.careers-section-description {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 28px;
+}
+
+.career-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1.5px solid #C7C7C7;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  width: 280px;
+  height: 110px;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: #0C479A;
+}
+
+.career-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.career-icon {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.career-content {
+  flex: 1;
+}
+
+.career-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+
+.career-jobs {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #636363;
+  margin: 0;
+}
+
+/* Unique color classes for each icon wrapper */
+.career-icon-marketing {
+  background-color: #0C479A
+}
+
+.career-icon-design {
+  background-color: #3FB92F
+}
+
+.career-icon-humsn {
+  background-color: #E3890B
+}
+
+.career-icon-finance {
+  background-color: #DA5D5D
+}
+
+.career-icon-health {
+  background-color: #13C0B2
+}
+
+.career-icon-armforce {
+  background-color: #D55FCA
+}
+
+.career-icon-business {
+  background-color: #6D6C6C
+}
+
+.career-icon-legal {
+  background-color: #D49365
+}
+
+.career-icon-airport {
+  background-color: #9D964D
+}
+
+.career-icon-project {
+  background-color: #6CB5B2
+}
+
+.career-icon-manufacture {
+  background-color: #759870
+}
+
+/* Apps Section - Employee App & Company App */
+.employee-app-section,
+.company-app-section {
+  font-family: 'Urbanist', sans-serif;
+  position: relative;
+}
+
+.app-section-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.app-section-detail {
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.app-section-description {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: #000000;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.app-cta-btn {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-family: 'Urbanist', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.app-cta-btn:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+}
+
+/* Employee App Section */
+.employee-app-section {
+  min-height: 600px;
+}
+
+/* Large Yellow Phone - Right Side */
+.employee-large-phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  min-height: 600px;
+}
+
+.phone-mockup-large {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+.phone-mockup-large-blue {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+/* Company App Section */
+.company-app-section {
+  padding-top: 80px;
+}
+
+/* Company Phones Wrapper - Top */
+.company-phones-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 400px;
+  margin-bottom: 60px;
+}
+
+.company-phone-blue {
+  position: relative;
+  z-index: 2;
+  margin-right: -60px;
+}
+
+.company-phone-yellow {
+  position: relative;
+  z-index: 1;
+  margin-top: 40px;
+}
+
+.phone-mockup-medium {
+  width: 280px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+}
+
+.employee-img {
+  background: #094ACF;
+  border-radius: 50px;
+  margin: 0 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-img {
+  background: #FFCF40;
+  border-radius: 50px;
+  margin: 0 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Download App Section */
+.download-app-section {
+  background: linear-gradient(135deg, #183C6E 0%, #0C479A 100%);
+  padding: 100px 0;
+  position: relative;
+  border-radius: 50px;
+  margin-top: 150px;
+  height: 525px;
+}
+
+.download-app-img {
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  width: 100%;
+  max-width: 331px;
+  height: 100%;
+  max-height: 611px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.3));
+}
+
+.download-app-content {
+  color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.download-app-title {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 52px;
+}
+
+.download-app-title-highlight {
+  display: block;
+  font-size: 35px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.download-app-title-highlight-only {
+  color: #FFCF40;
+}
+
+.download-app-description {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 28px;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.download-app-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.download-store-link {
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.download-store-link:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+}
+
+.store-button-img {
+  height: 100%;
+  max-height: 46px;
+  width: 100%;
+  max-width: 148px;
+  display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991px) {
+  .navbar-main {
+    width: 100%;
+    border-radius: 0;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .nav-link {
+    padding: 8px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smooth slide animation for offcanvas */
+  .offcanvas-start {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+  }
+  .offcanvas-start.show {
+    opacity: 1;
+    transform: translateX(0%) !important;
+    width: 75%;
+  }
+
+  .offcanvas-start:not(.show) {
+    transform: translateX(-100%) !important;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .navbar-toggler {
+    order: 2;
+  }
+
+  .logo {
+    height: 40px;
+  }
+  .active {
+    width: 16%;
+  }
+  .nav-link.active {
+    width: 100% !important;
+  }
+
+  /* HomePage Hero Section Mobile */
+  .header-banner {
+    margin-top: 60px !important;
+    padding: 60px 20px !important;
+    min-height: 400px !important;
+  }
+  
+  .header-txt1 {
+    margin-bottom: 30px !important;
+    margin-top: 10px !important;
+  }
+  
+  .header-txt1 h1 {
+    font-size: 28px !important;
+    line-height: 38px !important;
+  }
+
+  .emirati-hero-heading {
+    font-size: 32px !important;
+    line-height: 42px !important;
+  }
+
+  .emirati-crown-btn {
+    padding: 14px 28px !important;
+    font-size: 16px !important;
+  }
+  
+  .crown-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navbar {
+    padding: 10px 15px !important;
+  }
+  
+  .navbar-container {
+    justify-content: space-between !important;
+  }
+
+  .navbar-nav-center {
+    display: none !important;
+  }
+
+  .navbar-actions {
+    display: none !important;
+  }
+  
+  .logo {
+    height: 35px !important;
+    width: auto !important;
+  }
+  
+  .navbar-brand {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+  }
+  
+  .navbar-toggler {
+    padding: 5px 10px !important;
+  }
+  
+  .offcanvas-start {
+    width: 80% !important;
+  }
+  
+  .offcanvas-body .navbar-nav {
+    gap: 15px !important;
+  }
+  
+  .offcanvas-body .nav-link {
+    font-size: 16px !important;
+    padding: 10px 0 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar {
+    padding: 8px 10px !important;
+  }
+  
+  .logo {
+    height: 30px !important;
+  }
+  
+  .offcanvas-start {
+    width: 85% !important;
+}
+
+  .header-banner {
+    margin-top: 20px !important;
+    padding: 40px 15px !important;
+    min-height: 350px !important;
+  }
+  
+  .header-txt1 h1 {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+  
+  .emirati-hero-heading {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+
+  .emirati-crown-btn {
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+    gap: 8px !important;
+  }
+
+  .crown-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Careers Section Mobile */
+  .careers-section-heading {
+    font-size: 28px !important;
+  }
+
+  .careers-section-description {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    padding: 0 15px;
+  }
+
+  .career-card {
+    padding: 16px;
+  }
+
+  .career-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  }
+
+  .career-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .career-title {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  .career-jobs {
+    font-size: 12px !important;
+  }
+
+  /* Download App Section Mobile */
+  .download-app-section {
+    padding: 60px 0 !important;
+  }
+
+  .download-app-title {
+    font-size: 32px !important;
+    line-height: 42px !important;
+    text-align: center;
+  }
+
+  .download-app-title-highlight {
+    font-size: 36px !important;
+    margin-top: 8px;
+  }
+
+  .download-app-description {
+    font-size: 16px !important;
+    line-height: 24px !important;
+    text-align: center;
+  }
+
+  .download-app-buttons {
+  justify-content: center;
+    gap: 15px;
+}
+
+  .store-button-img {
+    height: 50px;
+}
+
+  .download-app-img {
+  max-width: 280px;
+    margin-bottom: 40px;
+  }
+
+  .download-app-content {
+    text-align: center;
+  }
+
+  /* Apps Section Mobile */
+  .app-section-title {
+    font-size: 28px !important;
+  }
+
+  .app-section-description {
+    font-size: 14px !important;
+    line-height: 24px !important;
+  }
+
+  .app-cta-btn {
+    padding: 12px 28px !important;
+    font-size: 14px !important;
+  }
+
+  .employee-app-section {
+    min-height: auto;
+    padding-bottom: 100px;
+  }
+
+  .employee-large-phone {
+    min-height: 400px;
+    margin-top: 40px;
+  }
+
+  .phone-mockup-large {
+    max-width: 250px;
+  }
+
+  .employee-small-phone {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .phone-mockup-small {
+    width: 150px;
+  }
+
+  .company-app-section {
+    padding-top: 40px;
+  }
+
+  .company-phones-wrapper {
+    height: 300px;
+    margin-bottom: 40px;
+    flex-direction: column;
+  align-items: center;
+  }
+
+  .company-phone-blue {
+    margin-right: 0;
+    margin-bottom: -40px;
+  }
+
+  .company-phone-yellow {
+    margin-top: 0;
+  }
+
+  .phone-mockup-medium {
+    width: 200px;
+  }
+}
+
+/* Footer Styles */
+.footer-main-container {
+  background-color: #0E4593;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Urbanist', sans-serif;
+  margin-top: 100px;
+}
+
+.footer-main-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Footer Left Angle */
+.footer-main-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 362.37px;
+  height: 100%;
+  max-height: 375px;
+  background-image: var(--footer-left-angle);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform-origin: center center;
+  transform: rotate(35.52deg);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Footer Right Angle */
+.footer-main-container::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 184.45px;
+  height: 100%;
+  max-height: 298px;
+  background-image: var(--footer-right-angle);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  transform-origin: center center;
+  transform: rotate(40.47deg);
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-bottom-bar {
+  padding-bottom: 20px;
+}
+.footer-logo {
+  width: 389px;
+  height: 62px;
+  object-fit: contain;
+}
+
+.footer-company-name {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-main-text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 24px;
+  margin-bottom: 30px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-nav-link-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-nav-link-btn:hover {
+  color: #FFCF40;
+}
+
+.footer-copyright-text {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer-devicebee {
+  color: #FFCF40;
+  font-weight: 600;
+}
+
+.footer-contact-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.footer-contact-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.footer-policy-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.footer-policy-link {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-policy-link:hover {
+  color: #FFCF40;
+}
+
+.footer-policy-separator {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+/* Footer Responsive Styles */
+@media (max-width: 768px) {
+  .footer-company-name {
+    font-size: 24px;
+  }
+
+  .footer-main-text {
+    font-size: 14px;
+    padding: 0 20px;
+  }
+
+  .footer-nav-links {
+    gap: 20px;
+  }
+
+  .footer-nav-link-btn {
+    font-size: 14px;
+  }
+
+  .footer-bottom-bar {
+    padding: 20px 0;
+  }
+
+  .footer-copyright-text {
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-contact-info {
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .footer-policy-links {
+    justify-content: center;
+  }
+}
