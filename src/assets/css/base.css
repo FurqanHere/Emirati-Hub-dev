@@ -309,6 +309,86 @@ html {
   color: #000000 !important;
 }
 
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center phone */
+.phone-img {
+  width: 340px;
+  height: auto;
+  z-index: 3;
+}
+
+/* Shared card styles */
+.card {
+  position: absolute;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+/* LEFT SIDE */
+.card-top-left {
+  width: 290px;
+  top: 40px;
+  left: 37%;
+  transform: translateX(-430px);
+  border-radius: 13px;
+}
+
+.card-bottom-left {
+  width: 260px;
+  bottom: 300px;
+  left: 47%;
+  transform: translateX(-420px);
+  border-radius: 13px;
+}
+
+/* RIGHT SIDE */
+.card-top-right {
+  width: 280px;
+  top: 130px;
+  left: 59%;
+  transform: translateX(150px);
+  border-radius: 13px;
+}
+
+.card-bottom-right {
+  width: 190px;
+  bottom: 320px;
+  left: 51%;
+  transform: translateX(170px);
+  border-radius: 13px;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  width: 150px;
+  z-index: 1;
+}
+
+.arrow-left {
+  top: 40px;
+  left: 52%;
+  transform: translateX(-320px);
+}
+
+.arrow-right {
+  top: 40px;
+  left: 44%;
+  transform: translateX(220px);
+}
+
+.card:hover {
+  transform: translateX(var(--x)) scale(1.03);
+}
+
 .crown-icon {
   width: 29px;
   height: 25px;
