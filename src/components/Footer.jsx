@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import logo from "../assets/images/logo.png";
 import footerLeftAngle from "../assets/images/fooyer-left-angle.png";
 import footerRightAngle from "../assets/images/footer-right-angle.png";
@@ -7,6 +8,7 @@ import phoneImg from "../assets/images/phone-img.png";
 import emailImg from "../assets/images/email.png";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const location = useLocation();
 
   // Function to handle navigation to homepage sections
@@ -38,9 +40,7 @@ const Footer = () => {
           
           {/* Main Text Block */}
           <p className="footer-main-text" data-aos="fade-up" data-aos-delay="200">
-            Sed ut perspiatis unde omnis iste natus error voluptatem accusant um doloremque
-            <br />
-            site headricks laudan lipsum dummy text provider.
+            {t("footer.mainText")}
           </p>
 
           {/* Navigation Links */}
@@ -49,25 +49,25 @@ const Footer = () => {
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('home')}
             >
-              Home
+              {t("footer.home")}
             </button>
             <button 
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('aboutus')}
             >
-              About
+              {t("footer.about")}
             </button>
             <button 
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('screenshot')}
             >
-              Screenshots
+              {t("footer.screenshots")}
             </button>
             <button 
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('downloadApp')}
             >
-              Download App
+              {t("footer.downloadApp")}
             </button>
           </nav>
         </div>
@@ -77,33 +77,48 @@ const Footer = () => {
       <div className="footer-bottom-bar">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-8 col-12 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="400">
+            <div className="col-md-6 col-12 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="400">
               <p className="footer-copyright-text mb-0">
-                © Copyright 2025 Emirati Hub. All rights reserved. Made with By{" "}
-                <span className="footer-devicebee">DeviceBee Technologies.</span>
+                © {t("footer.copyright")}{" "}
+                <span className="footer-devicebee ms-1">{t("footer.devicebee")}</span>
               </p>
             </div>
-            <div className="col-md-4 col-12" data-aos="fade-up" data-aos-delay="500">
+            <div className="col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
               <div className="d-flex flex-column align-items-end gap-3">
                 {/* Contact Information - Row 1 */}
                 <div className="footer-contact-info">
-                  <div className="footer-contact-item">
+                  <a 
+                    href="tel:+971545426448" 
+                    className="footer-contact-item"
+                  >
                     <img src={phoneImg} alt="Phone" className="footer-contact-icon" />
-                    <span>971 25 364 1987</span>
-                  </div>
-                  <div className="footer-contact-item">
+                    <span>+971 54 542 6448</span>
+                  </a>
+                  <a 
+                    href="mailto:info@emirati-hub.ae" 
+                    className="footer-contact-item"
+                  >
                     <img src={emailImg} alt="Email" className="footer-contact-icon" />
-                    <span>info@emiratihub</span>
-                  </div>
+                    <span>info@emirati-hub.ae</span>
+                  </a>
+                  <a 
+                    href="https://wa.me/971545426448" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="footer-contact-item"
+                  >
+                    <i className="bi bi-whatsapp footer-contact-icon"></i>
+                    <span>+971 54 542 6448</span>
+                  </a>
                 </div>
                 {/* Policy Links - Row 2 */}
                 <div className="footer-policy-links">
                   <Link to="/terms" className="footer-policy-link">
-                    Terms & Conditions
+                    {t("footer.terms")}
                   </Link>
                   <span className="footer-policy-separator">|</span>
                   <Link to="/privacy" className="footer-policy-link">
-                    Privacy Policy
+                    {t("footer.privacy")}
                   </Link>
                 </div>
               </div>

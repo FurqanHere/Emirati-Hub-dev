@@ -1,0 +1,84 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "downloadApp": "Download App",
+    "contactUs": "Contact US"
+  },
+  "homepage": {
+    "heroTitle": "Premium Job Platform Only For UAE Nationals",
+    "heroButton": "Only for UAE National",
+    "careersTitle": "Explore Careers Across Every Field",
+    "careersDescription": "Discover a wide range of careers across industry from design and tech to healthcare and finance. Find roles that match your skills and passion, and take the next step toward your dream job.",
+    "jobsAvailable": "Jobs Available",
+    "careers": {
+      "marketing": "Marketing & Communication",
+      "design": "Design & Development",
+      "humanResearch": "Human Research & Development",
+      "finance": "Finance Management",
+      "healthcare": "Healthcare & Medical",
+      "armforce": "Armforce Guide & Security Chief",
+      "business": "Business & Consulting",
+      "legal": "Legal Adviser Management",
+      "airport": "Airport Maintenance",
+      "project": "Project Management",
+      "manufacture": "Manufacture Industry"
+    },
+    "employeeApp": {
+      "title": "Employee App",
+      "button": "Create Account",
+      "detail": "But I must explain to you how all this mistaken idea of denouncing pleasure.",
+      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rembe aperiam, eaque ipsa quae ab illo inventore veritatis eat quai architecto beatae expound the actual teachings of the great."
+    },
+    "companyApp": {
+      "title": "Company App",
+      "button": "Create Account",
+      "detail": "But I must explain to you how all this mistaken idea of denouncing pleasure.",
+      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rembe aperiam, eaque ipsa quae ab illo inventore veritatis eat quai architecto beatae expound the actual teachings of the great."
+    },
+    "downloadApp": {
+      "title": "Emirati Hub help to",
+      "highlight": "Only Emirati",
+      "nationalsBest": "Nationals Best",
+      "findJobs": "Find Jobs Opportunities",
+      "description": "Sed ut perspiatis unde omnis iste natus error voluptatem accusant ium doloremque site laudan lipsum dummy text provider."
+    }
+  },
+  "footer": {
+    "home": "Home",
+    "about": "About",
+    "screenshots": "Screenshots",
+    "downloadApp": "Download App",
+    "mainText": "Sed ut perspiatis unde omnis iste natus error voluptatem accusant um doloremque site headricks laudan lipsum dummy text provider.",
+    "terms": "Terms & Conditions",
+    "privacy": "Privacy Policy",
+    "copyright": "Copyright 2025 Emirati Hub. All rights reserved. Made with By",
+    "devicebee": "DeviceBee Technologies."
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "We are here for you. How can we help you?",
+    "form": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending..."
+    },
+    "validation": {
+      "title": "Validation Error",
+      "message": "Please fill in all required fields"
+    },
+    "success": {
+      "title": "Success",
+      "message": "Your message has been sent successfully!"
+    },
+    "error": {
+      "title": "Error",
+      "message": "Failed to send message. Please try again."
+    }
+  }
+}
+

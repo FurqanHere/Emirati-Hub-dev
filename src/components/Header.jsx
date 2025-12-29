@@ -1,21 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
+import { useTranslation } from "react-i18next";
 import logo from "../assets/images/logo.png";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-const links = [
-  { name: "Home", path: "home", type: "section" },
-  { name: "About", path: "aboutus", type: "section" },
-  { name: "Download App", path: "downloadApp", type: "section" },
-  { name: "Contact US", path: "contact", type: "section" },
-];
-
 export default function Navbar({ background = "" }) {
+  const { t, i18n } = useTranslation();
   const [activeLink, setActiveLink] = useState("/");
   const [isScrolled, setIsScrolled] = useState(false);
+  
+  const links = [
+    { name: t("header.home"), path: "home", type: "section", key: "home" },
+    { name: t("header.about"), path: "aboutus", type: "section", key: "about" },
+    { name: t("header.downloadApp"), path: "downloadApp", type: "section", key: "downloadApp" },
+    { name: t("header.contactUs"), path: "contact", type: "section", key: "contactUs" },
+  ];
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'ar' : 'en';
+    i18n.changeLanguage(newLang);
+    localStorage.setItem('language', newLang);
+    
+    // Update document direction
+    document.documentElement.setAttribute('dir', newLang === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('lang', newLang);
+  };
+
+  useEffect(() => {
+    const currentLang = i18n.language || localStorage.getItem('language') || 'en';
+    const direction = currentLang === "ar" ? "rtl" : "ltr";
+    document.documentElement.setAttribute("dir", direction);
+    document.documentElement.setAttribute("lang", currentLang);
+    if (i18n.language !== currentLang) {
+      i18n.changeLanguage(currentLang);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +68,7 @@ export default function Navbar({ background = "" }) {
         </button>
 
           {/* Menu Links - Center */}
-          <div className="navbar-nav-center d-none d-lg-flex" data-aos="fade-down" data-aos-delay="200">
+          <div className="navbar-nav-center d-none d-lg-flex" data-aos="fade-down" data-aos-delay="200" key={i18n.language}>
             <ul className="navbar-nav">
               {links.map((l, index) => (
               <li
@@ -58,6 +80,16 @@ export default function Navbar({ background = "" }) {
                   {l.type === "route" ? (
                     <Link
                       to={l.path}
+                      className={`nav-link ${
+                        activeLink === l.path ? "active" : ""
+                      }`}
+                      onClick={() => setActiveLink(l.path)}
+                    >
+                      {l.name}
+                    </Link>
+                  ) : l.path === "contact" ? (
+                    <Link
+                      to="/contact-us"
                       className={`nav-link ${
                         activeLink === l.path ? "active" : ""
                       }`}
@@ -82,11 +114,14 @@ export default function Navbar({ background = "" }) {
           </ul>
           </div>
 
-          {/* Get Started Button - Right */}
+          {/* Language Switcher Button - Right */}
           <div className="navbar-actions d-none d-lg-flex" data-aos="fade-down" data-aos-delay="500">
-            <Link className="btn get-started-btn shadow rounded-pill" to="/#home">
-              Get Started
-            </Link>
+            <button 
+              className="btn language-switcher-btn shadow rounded-pill" 
+              onClick={toggleLanguage}
+            >
+              {i18n.language === 'en' ? 'AR' : 'ENG'}
+            </button>
           </div>
         </div>
       </nav>
@@ -128,6 +163,18 @@ export default function Navbar({ background = "" }) {
                   >
                     {l.name}
                   </Link>
+                ) : l.path === "contact" ? (
+                  <Link
+                    style={{ fontSize: "1.125rem" }}
+                    to="/contact-us"
+                    className={`nav-link ${
+                      activeLink === l.path ? "active" : ""
+                    }`}
+                    onClick={() => setActiveLink(l.path)}
+                    data-bs-dismiss="offcanvas"
+                  >
+                    {l.name}
+                  </Link>
                 ) : (
                   <ScrollLink
                     style={{ fontSize: "1.125rem" }}
@@ -148,13 +195,19 @@ export default function Navbar({ background = "" }) {
               </li>
             ))}
           </ul>
-          <Link
-            className="btn get-started-btn w-100 justify-content-center mt-4"
-            to="/#home"
-            data-bs-dismiss="offcanvas"
+          <button
+            className="btn language-switcher-btn w-100 justify-content-center mt-4"
+            onClick={() => {
+              toggleLanguage();
+              const offcanvas = document.getElementById('offcanvasNavbar');
+              if (offcanvas) {
+                const bsOffcanvas = window.bootstrap?.Offcanvas?.getInstance(offcanvas);
+                if (bsOffcanvas) bsOffcanvas.hide();
+              }
+            }}
           >
-            Get Started
-          </Link>
+            {i18n.language === 'en' ? 'AR' : 'ENG'}
+          </button>
         </div>
       </div>
     </>

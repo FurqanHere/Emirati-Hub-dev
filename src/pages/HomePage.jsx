@@ -6,6 +6,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import crownImg from "../assets/images/crown.png";
+import arrowLeftImg from "../assets/images/left-arrow.png";
+import arrowRightImg from "../assets/images/right-arrow.png";
 import headerImg from "../assets/images/header-main-img.png";
 import appSsImg from "../assets/images/app-ss.png";
 
@@ -27,22 +29,16 @@ import helpAppImg from "../assets/images/help-app-ss-img.png";
 
 import appStoreImg from "../assets/images/app-store.png";
 import playStoreImg from "../assets/images/play-store.png";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 import { useLocation } from "react-router-dom";
 import { scroller } from "react-scroll";
 
 import ApiService from "../services/ApiService";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
+  const { t } = useTranslation();
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -105,14 +101,6 @@ const HomePage = () => {
     }
   }, [location]);
 
-  // Scroll to top function
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <>
       <div className="img1">
@@ -129,7 +117,7 @@ const HomePage = () => {
                     data-aos-delay="100"
                   >
                     <h1 className="emirati-hero-heading text-white">
-                      Premium Job Platform Only <br className="none" /> For UAE Nationals
+                      {t("homepage.heroTitle")}
                     </h1>
                   </div>
                   <div
@@ -139,12 +127,17 @@ const HomePage = () => {
                   >
                     <button className="btn emirati-crown-btn rounded-pill">
                       <img src={crownImg} alt="Crown" className="crown-icon" />
-                      <span>Only for UAE National</span>
+                      <span>{t("homepage.heroButton")}</span>
                     </button>
                   </div>
                 </div>
                 <div className="mt-5" data-aos="fade-up" data-aos-delay="300">
-                  <img src={headerImg} className="w-100 headerMainImg d-none d-md-block" alt="" />
+
+                  {/* <img src={arrowLeftImg} className="headerMainImg d-none d-md-block" alt="" /> */}
+                  <img src={headerImg} className="w-100 headerMainImg d-none d-md-block" alt=""
+                  //  style={{ width: '339px', height: '665px' }}
+                    />
+                  {/* <img src={arrowRightImg} className="headerMainImg d-none d-md-block" alt="" /> */}
                   <img src={appSsImg} className="w-100 headerMainImg d-block d-md-none" alt="" />
                 </div>
               </div>
@@ -157,12 +150,10 @@ const HomePage = () => {
       <div className="container py-5 careers-section" id="careers">
         <div className="text-center mb-5" data-aos="fade-up" data-aos-delay="100">
           <h2 className="careers-section-heading">
-            Explore Careers Across Every Field
+            {t("homepage.careersTitle")}
           </h2>
           <p className="careers-section-description">
-            Discover a wide range of careers across industry from design and
-            tech to healthcare and finance. Find roles that match your skills
-            and passion, and take the next step toward your dream job.
+            {t("homepage.careersDescription")}
           </p>
         </div>
 
@@ -178,8 +169,8 @@ const HomePage = () => {
                 />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Marketing & Communication</h5>
-                <p className="career-jobs">1542 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.marketing")}</h5>
+                <p className="career-jobs">1542 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -190,8 +181,8 @@ const HomePage = () => {
                 <img src={designImg} alt="Design" className="career-icon" />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Design & Development</h5>
-                <p className="career-jobs">748 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.design")}</h5>
+                <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -206,8 +197,8 @@ const HomePage = () => {
                 />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Human Research & Development</h5>
-                <p className="career-jobs">290 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.humanResearch")}</h5>
+                <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -218,8 +209,8 @@ const HomePage = () => {
                 <img src={financeImg} alt="Finance" className="career-icon" />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Finance Management</h5>
-                <p className="career-jobs">349 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.finance")}</h5>
+                <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -231,8 +222,8 @@ const HomePage = () => {
                 <img src={healthImg} alt="Healthcare" className="career-icon" />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Healthcare & Medical</h5>
-                <p className="career-jobs">1542 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.healthcare")}</h5>
+                <p className="career-jobs">1542 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -248,9 +239,9 @@ const HomePage = () => {
               </div>
               <div className="career-content">
                 <h5 className="career-title">
-                  Armforce Guide & Security Chief
+                  {t("homepage.careers.armforce")}
                 </h5>
-                <p className="career-jobs">748 Jobs Available</p>
+                <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -261,8 +252,8 @@ const HomePage = () => {
                 <img src={businessImg} alt="Business" className="career-icon" />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Business & Consulting</h5>
-                <p className="career-jobs">290 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.business")}</h5>
+                <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -273,8 +264,8 @@ const HomePage = () => {
                 <img src={legalImg} alt="Legal" className="career-icon" />
               </div>
               <div className="career-content">
-                <h5 className="career-title">Legal Adviser Management</h5>
-                <p className="career-jobs">349 Jobs Available</p>
+                <h5 className="career-title">{t("homepage.careers.legal")}</h5>
+                <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>
@@ -292,8 +283,8 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="career-content">
-                    <h5 className="career-title">Airport Maintenance</h5>
-                    <p className="career-jobs">748 Jobs Available</p>
+                    <h5 className="career-title">{t("homepage.careers.airport")}</h5>
+                    <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
                   </div>
                 </div>
               </div>
@@ -308,8 +299,8 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="career-content">
-                    <h5 className="career-title">Project Management</h5>
-                    <p className="career-jobs">290 Jobs Available</p>
+                    <h5 className="career-title">{t("homepage.careers.project")}</h5>
+                    <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
                   </div>
                 </div>
               </div>
@@ -324,8 +315,8 @@ const HomePage = () => {
                     />
                   </div>
                   <div className="career-content">
-                    <h5 className="career-title">Manufacture Industry</h5>
-                    <p className="career-jobs">349 Jobs Available</p>
+                    <h5 className="career-title">{t("homepage.careers.manufacture")}</h5>
+                    <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
                   </div>
                 </div>
               </div>
@@ -353,21 +344,13 @@ const HomePage = () => {
           {/* Right Column - Large Yellow Phone */}
           <div className="col-lg-6 employee-app-section-right-column" data-aos="fade-left" data-aos-delay="200">
             <div className="ms-5 app-section-content">
-              <h2 className="app-section-title">Employee App</h2>
+              <h2 className="app-section-title">{t("homepage.employeeApp.title")}</h2>
               <p className="app-section-detail">
-                But I must explain to you how all this mistaken <br className="none" /> idea of
-                denouncing pleasure.
+                {t("homepage.employeeApp.detail")}
               </p>
               <p className="app-section-description">
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                <br className="none" />
-                accusantium doloremque laudantium, totam rembe aperiam, <br className="none" />
-                eaque ipsa quae ab illo inventore veritatis eat quai architecto
-                <br className="none" /> beatae expound the actual teachings of the great.
+                {t("homepage.employeeApp.description")}
               </p>
-              <button className="btn app-cta-btn mt-4 rounded-pill">
-                Create Account
-              </button>
             </div>
           </div>
         </div>
@@ -378,21 +361,13 @@ const HomePage = () => {
         <div className="row align-items-center">
           {/* Left Column */}
           <div className="col-lg-6 company-app-section-left-column" data-aos="fade-right" data-aos-delay="100">
-            <h2 className="app-section-title">Company App</h2>
+            <h2 className="app-section-title">{t("homepage.companyApp.title")}</h2>
             <p className="app-section-detail">
-              But I must explain to you how all this mistaken <br className="none" /> idea of
-              denouncing pleasure.
+              {t("homepage.companyApp.detail")}
             </p>
             <p className="app-section-description">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              <br className="none" />
-              accusantium doloremque laudantium, totam rembe aperiam, <br className="none" />
-              eaque ipsa quae ab illo inventore veritatis eat quai architecto
-              <br className="none" /> beatae expound the actual teachings of the great.
+              {t("homepage.companyApp.description")}
             </p>
-            <button className="btn app-cta-btn mt-4 rounded-pill">
-              Create Account
-            </button>
           </div>
 
           {/* Right Column */}
@@ -424,18 +399,16 @@ const HomePage = () => {
             <div className="col-lg-7" data-aos="fade-left" data-aos-delay="200">
               <div className="download-app-content">
                 <h2 className="download-app-title">
-                  Emirati Hub help to
+                  {t("homepage.downloadApp.title")}{" "}
                   <span className="download-app-title-highlight">
                     <span className="download-app-title-highlight-only">
-                      Only Emirati
+                      {t("homepage.downloadApp.highlight")}
                     </span>{" "}
-                    Nationals Best <br className="none" /> Find Jobs Opportunities
+                    {t("homepage.downloadApp.nationalsBest")} <br className="none" /> {t("homepage.downloadApp.findJobs")}
                   </span>
                 </h2>
                 <p className="download-app-description">
-                  Sed ut perspiatis unde omnis iste natus error voluptatem
-                  accusant <br className="none" /> ium doloremque site laudan lipsum dummy text
-                  provider.
+                  {t("homepage.downloadApp.description")}
                 </p>
                 <div className="download-app-buttons">
                   <a
