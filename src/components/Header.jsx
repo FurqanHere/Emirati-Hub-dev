@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import logo from "../assets/images/logo.png";
+import { UAEFlag, UKFlag } from "./FlagIcons";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
@@ -49,6 +50,19 @@ export default function Navbar({ background = "" }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const closeMenu = () => {
+    const offcanvas = document.getElementById('offcanvasNavbar');
+    if (offcanvas) {
+      const bsOffcanvas = window.bootstrap?.Offcanvas?.getInstance(offcanvas);
+      if (bsOffcanvas) {
+        bsOffcanvas.hide();
+      } else {
+        const closeBtn = offcanvas.querySelector('.btn-close');
+        if (closeBtn) closeBtn.click();
+      }
+    }
+  };
+
   return (
     <>
       <nav className={`navbar navbar-expand-lg ${background} ${isScrolled ? 'navbar-fixed' : ''}`}>
@@ -89,7 +103,7 @@ export default function Navbar({ background = "" }) {
                     </Link>
                   ) : l.path === "contact" ? (
                     <Link
-                      to="/contact-us"
+                      to="/"
                       className={`nav-link ${
                         activeLink === l.path ? "active" : ""
                       }`}
@@ -117,10 +131,15 @@ export default function Navbar({ background = "" }) {
           {/* Language Switcher Button - Right */}
           <div className="navbar-actions d-none d-lg-flex" data-aos="fade-down" data-aos-delay="500">
             <button 
-              className="btn language-switcher-btn shadow rounded-pill" 
+              className="btn language-switcher-btn-modern" 
               onClick={toggleLanguage}
+              title={i18n.language === 'en' ? 'Switch to Arabic' : 'Switch to English'}
             >
-              {i18n.language === 'en' ? 'AR' : 'ENG'}
+              {i18n.language === 'en' ? (
+                <UAEFlag style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }} />
+              ) : (
+                <UKFlag style={{ width: '28px', height: '28px', borderRadius: '50%', objectFit: 'cover' }} />
+              )}
             </button>
           </div>
         </div>
@@ -158,55 +177,64 @@ export default function Navbar({ background = "" }) {
                     className={`nav-link ${
                       activeLink === l.path ? "active" : ""
                     }`}
-                    onClick={() => setActiveLink(l.path)}
-                    data-bs-dismiss="offcanvas"
+                    onClick={() => {
+                      setActiveLink(l.path);
+                      closeMenu();
+                    }}
                   >
                     {l.name}
                   </Link>
                 ) : l.path === "contact" ? (
                   <Link
                     style={{ fontSize: "1.125rem" }}
-                    to="/contact-us"
+                    to="/"
                     className={`nav-link ${
                       activeLink === l.path ? "active" : ""
                     }`}
-                    onClick={() => setActiveLink(l.path)}
-                    data-bs-dismiss="offcanvas"
+                    onClick={() => {
+                      setActiveLink(l.path);
+                      closeMenu();
+                    }}
                   >
                     {l.name}
                   </Link>
                 ) : (
-                  <ScrollLink
+                  <Link
                     style={{ fontSize: "1.125rem" }}
-                    to={l.path}
-                    smooth
-                    duration={200}
-                    spy
+                    to={`/#${l.path}`}
                     className={`nav-link ${
                       activeLink === l.path ? "active" : ""
                     }`}
-                    onClick={() => setActiveLink(l.path)}
-                    data-bs-dismiss="offcanvas"
+                    onClick={() => {
+                      setActiveLink(l.path);
+                      closeMenu();
+                    }}
                   >
                     {l.name}
-                  </ScrollLink>
+                  </Link>
                 )}
                 
               </li>
             ))}
           </ul>
           <button
-            className="btn language-switcher-btn w-100 justify-content-center mt-4"
+            className="btn language-switcher-btn-modern d-flex justify-content-center align-items-center gap-2"
             onClick={() => {
               toggleLanguage();
-              const offcanvas = document.getElementById('offcanvasNavbar');
-              if (offcanvas) {
-                const bsOffcanvas = window.bootstrap?.Offcanvas?.getInstance(offcanvas);
-                if (bsOffcanvas) bsOffcanvas.hide();
-              }
+              closeMenu();
             }}
           >
-            {i18n.language === 'en' ? 'AR' : 'ENG'}
+            {i18n.language === 'en' ? (
+              <>
+                <span className="text-dark fw-bold me-2">Switch to Arabic</span>
+                <UAEFlag style={{ width: '32px', borderRadius: '4px' }} />
+              </>
+            ) : (
+              <>
+                <span className="text-dark fw-bold me-2">Switch to English</span>
+                <UKFlag style={{ width: '32px', borderRadius: '4px' }} />
+              </>
+            )}
           </button>
         </div>
       </div>

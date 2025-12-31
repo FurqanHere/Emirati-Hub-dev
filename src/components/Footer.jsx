@@ -69,6 +69,13 @@ const Footer = () => {
             >
               {t("footer.downloadApp")}
             </button>
+            
+            <button 
+              className="footer-nav-link-btn"
+              onClick={() => handleSectionNavigation('contactUs')}
+            >
+              {t("footer.contactUs")}
+            </button>
           </nav>
         </div>
       </div>
@@ -77,13 +84,13 @@ const Footer = () => {
       <div className="footer-bottom-bar">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-md-6 col-12 mb-3 mb-md-0" data-aos="fade-up" data-aos-delay="400">
+            <div className="col-md-6 col-12 mb-3 mb-md-0">
               <p className="footer-copyright-text mb-0">
-                © {t("footer.copyright")}{" "}
+                © {t("footer.copyright")}
                 <span className="footer-devicebee ms-1">{t("footer.devicebee")}</span>
               </p>
             </div>
-            <div className="col-md-6 col-12" data-aos="fade-up" data-aos-delay="500">
+            <div className="col-md-6 col-12">
               <div className="d-flex flex-column align-items-end gap-3">
                 {/* Contact Information - Row 1 */}
                 <div className="footer-contact-info">
@@ -108,11 +115,10 @@ const Footer = () => {
                     className="footer-contact-item"
                   >
                     <i className="bi bi-whatsapp footer-contact-icon"></i>
-                    <span>+971 54 542 6448</span>
                   </a>
                 </div>
                 {/* Policy Links - Row 2 */}
-                <div className="footer-policy-links">
+                {/* <div className="footer-policy-links">
                   <Link to="/terms" className="footer-policy-link">
                     {t("footer.terms")}
                   </Link>
@@ -120,7 +126,7 @@ const Footer = () => {
                   <Link to="/privacy" className="footer-policy-link">
                     {t("footer.privacy")}
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -6,12 +6,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 import crownImg from "../assets/images/crown.png";
-import arrowLeftImg from "../assets/images/left-arrow.png";
-import arrowRightImg from "../assets/images/right-arrow.png";
-import card1 from "../assets/images/1.png";
-import card2 from "../assets/images/2.png";
-import card3 from "../assets/images/3.png";
-import card4 from "../assets/images/4.png";
 import headerImg from "../assets/images/header-main-img.png";
 import appSsImg from "../assets/images/app-ss.png";
 
@@ -113,15 +107,17 @@ const HomePage = () => {
         <div className="header-banner" id="home">
           <div className="container">
             <div className="row align-items-center">
-              <div className="col-12 position-relative">
+              <div className="col-12">
                 <div className="header-txt1 text-center">
                   <div
-                    className="position-relative"
+                    className=""
                     data-aos="fade-up"
                     data-aos-delay="100"
                   >
                     <h1 className="emirati-hero-heading text-white">
                       {t("homepage.heroTitle")}
+                      <br />
+                      {t("homepage.heroTitleii")}
                     </h1>
                   </div>
                   <div
@@ -135,27 +131,8 @@ const HomePage = () => {
                     </button>
                   </div>
                 </div>
-                <div className="hero-visual d-none d-md-flex mt-5">
-                  {/* Left cards */}
-                  <img src={card3} className="card card-top-left" alt="" />
-                  <img src={card2} className="card card-bottom-left" alt="" />
-
-                  {/* Left arrow */}
-                  <img src={arrowLeftImg} className="arrow arrow-left" alt="" />
-
-                  {/* Center mobile */}
-                  <img src={appSsImg} className="phone-img" alt="" />
-
-                  {/* Right arrow */}
-                  <img
-                    src={arrowRightImg}
-                    className="arrow arrow-right"
-                    alt=""
-                  />
-
-                  {/* Right cards */}
-                  <img src={card1} className="card card-top-right" alt="" />
-                  <img src={card4} className="card card-bottom-right" alt="" />
+                <div className="hero-visual d-none d-md-flex">
+                  <img src={ headerImg } alt="" />
                 </div>
 
                 {/* Mobile */}
@@ -344,79 +321,61 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Row 3 */}
-          <div className="col-12 careers-last-row-wrapper">
-            <div className="row g-4 justify-content-center">
-              <div
-                className="col-md-3 col-sm-6"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                <div className="career-card">
-                  <div className="career-icon-wrapper career-icon-airport">
-                    <img
-                      src={airportImg}
-                      alt="Airport"
-                      className="career-icon"
-                    />
-                  </div>
-                  <div className="career-content">
-                    <h5 className="career-title">
-                      {t("homepage.careers.airport")}
-                    </h5>
-                    <p className="career-jobs">
-                      748 {t("homepage.jobsAvailable")}
-                    </p>
-                  </div>
-                </div>
+          {/* Row 3 (flattened for mobile slider) */}
+          <div
+            className="col-md-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div className="career-card">
+              <div className="career-icon-wrapper career-icon-airport">
+                <img src={airportImg} alt="Airport" className="career-icon" />
               </div>
-
-              <div
-                className="col-md-3 col-sm-6"
-                data-aos="fade-up"
-                data-aos-delay="650"
-              >
-                <div className="career-card">
-                  <div className="career-icon-wrapper career-icon-project">
-                    <img
-                      src={projectImg}
-                      alt="Project"
-                      className="career-icon"
-                    />
-                  </div>
-                  <div className="career-content">
-                    <h5 className="career-title">
-                      {t("homepage.careers.project")}
-                    </h5>
-                    <p className="career-jobs">
-                      290 {t("homepage.jobsAvailable")}
-                    </p>
-                  </div>
-                </div>
+              <div className="career-content">
+                <h5 className="career-title">
+                  {t("homepage.careers.airport")}
+                </h5>
+                <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
               </div>
+            </div>
+          </div>
 
-              <div
-                className="col-md-3 col-sm-6"
-                data-aos="fade-up"
-                data-aos-delay="700"
-              >
-                <div className="career-card">
-                  <div className="career-icon-wrapper career-icon-manufacture">
-                    <img
-                      src={manufactureImg}
-                      alt="Manufacture"
-                      className="career-icon"
-                    />
-                  </div>
-                  <div className="career-content">
-                    <h5 className="career-title">
-                      {t("homepage.careers.manufacture")}
-                    </h5>
-                    <p className="career-jobs">
-                      349 {t("homepage.jobsAvailable")}
-                    </p>
-                  </div>
-                </div>
+          <div
+            className="col-md-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="650"
+          >
+            <div className="career-card">
+              <div className="career-icon-wrapper career-icon-project">
+                <img src={projectImg} alt="Project" className="career-icon" />
+              </div>
+              <div className="career-content">
+                <h5 className="career-title">
+                  {t("homepage.careers.project")}
+                </h5>
+                <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            className="col-md-3 col-sm-6"
+            data-aos="fade-up"
+            data-aos-delay="700"
+          >
+            <div className="career-card">
+              <div className="career-icon-wrapper career-icon-manufacture">
+                <img
+                  src={manufactureImg}
+                  alt="Manufacture"
+                  className="career-icon"
+                />
+              </div>
+              <div className="career-content">
+                <h5 className="career-title">
+                  {t("homepage.careers.manufacture")}
+                </h5>
+                <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
               </div>
             </div>
           </div>

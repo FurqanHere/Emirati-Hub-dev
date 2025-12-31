@@ -6,7 +6,8 @@
     "contactUs": "Contact US"
   },
   "homepage": {
-    "heroTitle": "Premium Job Platform Only For UAE Nationals",
+    "heroTitle": "Premium Job Platform Only",
+    "heroTitleii": "For UAE Nationals",
     "heroButton": "Only for UAE National",
     "careersTitle": "Explore Careers Across Every Field",
     "careersDescription": "Discover a wide range of careers across industry from design and tech to healthcare and finance. Find roles that match your skills and passion, and take the next step toward your dream job.",
@@ -49,6 +50,7 @@
     "about": "About",
     "screenshots": "Screenshots",
     "downloadApp": "Download App",
+    "contactUs": "Contact US",
     "mainText": "Sed ut perspiatis unde omnis iste natus error voluptatem accusant um doloremque site headricks laudan lipsum dummy text provider.",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",

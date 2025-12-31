@@ -1,0 +1,35 @@
+.language-switcher-btn-modern {
+  background-color: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 50% !important;
+  padding: 0 !important;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.language-switcher-btn-modern:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Mobile specific styles for the switcher */
+.offcanvas .language-switcher-btn-modern {
+  width: 100%;
+  height: auto;
+  border-radius: 12px !important;
+  border: 1px solid #eee !important;
+  padding: 12px !important;
+  background-color: #f8f9fa !important;
+  margin-top: 20px;
+}
+
+.offcanvas .language-switcher-btn-modern:hover {
+  background-color: #e9ecef !important;
+  transform: translateY(-2px);
+}
