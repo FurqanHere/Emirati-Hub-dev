@@ -26,23 +26,21 @@
       "manufacture": "Manufacture Industry"
     },
     "employeeApp": {
-      "title": "Employee App",
+      "title": "Employee App (Job Seeker App)",
       "button": "Create Account",
-      "detail": "But I must explain to you how all this mistaken idea of denouncing pleasure.",
-      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rembe aperiam, eaque ipsa quae ab illo inventore veritatis eat quai architecto beatae expound the actual teachings of the great."
+      "description": "Emirati Hub Employee App connects UAE Nationals with exclusive job opportunities, helping you build a professional profile, apply directly to employers, and grow your career effortlessly. Experience a seamless job search journey tailored specifically for UAE nationals, offering tools and insights to help you stand out to potential employers."
     },
     "companyApp": {
-      "title": "Company App",
+      "title": "Employer App (Recruiter App)",
       "button": "Create Account",
-      "detail": "But I must explain to you how all this mistaken idea of denouncing pleasure.",
-      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rembe aperiam, eaque ipsa quae ab illo inventore veritatis eat quai architecto beatae expound the actual teachings of the great."
+      "description": "Emirati Hub Employer App enables UAE-based organizations to post jobs, discover qualified Emirati talent, manage applications, and connect directly with top candidates — all in one platform. Optimize your hiring strategy with our comprehensive recruitment solution, designed to bridge the gap between your organization and the nation's top talent efficiently."
     },
     "downloadApp": {
       "title": "Emirati Hub help to",
       "highlight": "Only Emirati",
       "nationalsBest": "Nationals Best",
       "findJobs": "Find Jobs Opportunities",
-      "description": "Sed ut perspiatis unde omnis iste natus error voluptatem accusant ium doloremque site laudan lipsum dummy text provider."
+      "description": "Discover premium job opportunities exclusively for UAE Nationals.\nConnect directly with trusted employers across government and private sectors."
     }
   },
   "footer": {

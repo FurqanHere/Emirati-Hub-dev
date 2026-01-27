@@ -412,9 +412,6 @@ const HomePage = () => {
               <h2 className="app-section-title">
                 {t("homepage.employeeApp.title")}
               </h2>
-              <p className="app-section-detail">
-                {t("homepage.employeeApp.detail")}
-              </p>
               <p className="app-section-description">
                 {t("homepage.employeeApp.description")}
               </p>
@@ -435,9 +432,6 @@ const HomePage = () => {
             <h2 className="app-section-title">
               {t("homepage.companyApp.title")}
             </h2>
-            <p className="app-section-detail">
-              {t("homepage.companyApp.detail")}
-            </p>
             <p className="app-section-description">
               {t("homepage.companyApp.description")}
             </p>

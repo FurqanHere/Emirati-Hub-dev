@@ -87,20 +87,20 @@ const Footer = () => {
             <div className="col-md-6 col-12 mb-3 mb-md-0">
               <p className="footer-copyright-text mb-0">
                 © {t("footer.copyright")}
-                <span className="footer-devicebee ms-1">{t("footer.devicebee")}</span>
+                <a 
+                  href="https://devicebee.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="footer-devicebee ms-1 text-decoration-none"
+                >
+                  {t("footer.devicebee")}
+                </a>
               </p>
             </div>
             <div className="col-md-6 col-12">
               <div className="d-flex flex-column align-items-end gap-3">
                 {/* Contact Information - Row 1 */}
                 <div className="footer-contact-info">
-                  <a 
-                    href="tel:+971545426448" 
-                    className="footer-contact-item"
-                  >
-                    <img src={phoneImg} alt="Phone" className="footer-contact-icon" />
-                    <span>+971 54 542 6448</span>
-                  </a>
                   <a 
                     href="mailto:info@emirati-hub.ae" 
                     className="footer-contact-item"
@@ -115,6 +115,14 @@ const Footer = () => {
                     className="footer-contact-item"
                   >
                     <i className="bi bi-whatsapp footer-contact-icon"></i>
+                  </a>
+                  <a 
+                    href="#" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="footer-contact-item"
+                  >
+                    <i className="bi bi-instagram footer-contact-icon"></i>
                   </a>
                 </div>
                 {/* Policy Links - Row 2 */}

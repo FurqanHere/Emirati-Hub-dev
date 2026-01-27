@@ -252,7 +252,7 @@ html {
 /* Home Page */
 .header-banner {
   background-color: #073F9D;
-  height: 87vh;
+  height: 94vh;
   display: flex;
   align-items: start;
   font-family: 'Urbanist', sans-serif;
@@ -315,11 +315,12 @@ html {
 }
 
 .hero-visual img {
-  width: object-fit;
+  width: auto;
+  max-width: 100%;
   height: 677px;
   margin-right: 20px;
   position: absolute;
-  bottom: -80px;
+  bottom: -300px;
 }
 
 /* Center phone */
@@ -593,13 +594,14 @@ html {
 
 /* Arabic text spacing */
 [dir="rtl"] .app-section-detail {
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 [dir="rtl"] .app-section-description {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  line-height: 40px;
 }
 
 .app-cta-btn {
@@ -729,7 +731,7 @@ html {
 
 .download-app-img {
   position: absolute;
-  bottom: -259px;
+  bottom: -250px;
   left: 5%;
   width: 100%;
   max-width: 331px;
@@ -780,12 +782,20 @@ html {
   line-height: 28px;
   margin-bottom: 40px;
   opacity: 0.95;
+  white-space: pre-line;
 }
 
 /* Arabic text spacing */
+[dir="rtl"] .download-app-title-highlight {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  line-height: 70px;
+}
+
 [dir="rtl"] .download-app-description {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 32px;
+  margin-bottom: 40px;
+  line-height: 40px;
 }
 
 .download-app-buttons {
@@ -826,6 +836,47 @@ html {
   }
   .nav-link {
     padding: 8px 0;
+  }
+
+  /* Tablet Adjustments for Hero and Download Sections */
+  .header-banner {
+    height: auto;
+    min-height: 90vh;
+    padding-bottom: 50px;
+    align-items: center;
+  }
+
+  .hero-visual img {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-right: 0;
+    margin-top: 40px;
+    height: auto;
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .download-app-section {
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .download-app-img {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin: 0 auto 40px auto;
+    max-width: 300px;
+    display: block;
+  }
+  
+  .download-app-content {
+    text-align: center;
+  }
+  
+  .download-app-buttons {
+    justify-content: center;
   }
 }
 
