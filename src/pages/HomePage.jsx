@@ -490,8 +490,8 @@ const HomePage = () => {
                   {t("homepage.downloadApp.description")}
                 </p>
                 <div className="download-app-buttons">
-                  <a
-                    href="#"
+                  {/* <a
+                    href="https://apps.apple.com/ae/app/emiratihub/id6753808339"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="download-store-link"
@@ -501,9 +501,9 @@ const HomePage = () => {
                       alt="Get it on Google Play"
                       className="store-button-img"
                     />
-                  </a>
+                  </a> */}
                   <a
-                    href="#"
+                    href="https://apps.apple.com/ae/app/emiratihub/id6753808339"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="download-store-link"

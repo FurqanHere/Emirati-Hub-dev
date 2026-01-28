@@ -361,7 +361,7 @@ html {
 /* Careers Section */
 .careers-section {
   font-family: 'Urbanist', sans-serif;
-  margin-top: 300px;
+  margin-top: 350px;
 }
 
 .careers-grid {
@@ -731,7 +731,7 @@ html {
 
 .download-app-img {
   position: absolute;
-  bottom: -250px;
+  bottom: -259px;
   left: 5%;
   width: 100%;
   max-width: 331px;
@@ -1361,10 +1361,7 @@ html {
   transition: all 0.3s ease;
 }
 
-.footer-copyright-text:hover {
-  color: #FFCF40;
-  transform: translateX(5px);
-}
+
 
 .footer-devicebee {
   color: #FFCF40;
@@ -1636,4 +1633,20 @@ html {
     font-size: 16px;
     padding: 14px 28px;
   }
+}
+
+/* Footer Copyright Hover Fix */
+.footer-copyright-text {
+  color: #fff;
+}
+.footer-copyright-text:hover {
+  color: #fff !important;
+}
+.footer-devicebee {
+  color: #FFCF40;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.footer-devicebee:hover {
+  color: #FFCF40 !important;
 }

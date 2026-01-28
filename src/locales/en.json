@@ -1,7 +1,8 @@
 {
   "header": {
     "home": "Home",
-    "about": "About",
+    "aboutUs": "About Us",
+    "features": "Features",
     "downloadApp": "Download App",
     "contactUs": "Contact US"
   },
@@ -45,10 +46,9 @@
   },
   "footer": {
     "home": "Home",
-    "about": "About",
-    "screenshots": "Screenshots",
+    "aboutUs": "About Us",
+    "features": "Features",
     "downloadApp": "Download App",
-    "contactUs": "Contact US",
     "mainText": "Emirati Hub is the premier job platform exclusively for UAE Nationals, connecting talented professionals with top opportunities in government and private sectors.",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",

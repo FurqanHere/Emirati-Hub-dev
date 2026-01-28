@@ -55,26 +55,19 @@ const Footer = () => {
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('aboutus')}
             >
-              {t("footer.about")}
+              {t("footer.aboutUs")}
             </button>
             <button 
               className="footer-nav-link-btn"
-              onClick={() => handleSectionNavigation('screenshot')}
+              onClick={() => handleSectionNavigation('careers')}
             >
-              {t("footer.screenshots")}
+              {t("footer.features")}
             </button>
             <button 
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('downloadApp')}
             >
               {t("footer.downloadApp")}
-            </button>
-            
-            <button 
-              className="footer-nav-link-btn"
-              onClick={() => handleSectionNavigation('contactUs')}
-            >
-              {t("footer.contactUs")}
             </button>
           </nav>
         </div>
@@ -117,7 +110,7 @@ const Footer = () => {
                     <i className="bi bi-whatsapp footer-contact-icon"></i>
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.instagram.com/emirati.hub/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="footer-contact-item"

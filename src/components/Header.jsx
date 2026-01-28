@@ -15,9 +15,9 @@ export default function Navbar({ background = "" }) {
   
   const links = [
     { name: t("header.home"), path: "home", type: "section", key: "home" },
-    { name: t("header.about"), path: "aboutus", type: "section", key: "about" },
+    { name: t("header.aboutUs"), path: "aboutus", type: "section", key: "about" },
+    { name: t("header.features"), path: "careers", type: "section", key: "features" },
     { name: t("header.downloadApp"), path: "downloadApp", type: "section", key: "downloadApp" },
-    { name: t("header.contactUs"), path: "contact", type: "section", key: "contactUs" },
   ];
 
   const toggleLanguage = () => {
@@ -174,20 +174,6 @@ export default function Navbar({ background = "" }) {
                   <Link
                     style={{ fontSize: "1.125rem" }}
                     to={l.path}
-                    className={`nav-link ${
-                      activeLink === l.path ? "active" : ""
-                    }`}
-                    onClick={() => {
-                      setActiveLink(l.path);
-                      closeMenu();
-                    }}
-                  >
-                    {l.name}
-                  </Link>
-                ) : l.path === "contact" ? (
-                  <Link
-                    style={{ fontSize: "1.125rem" }}
-                    to="/"
                     className={`nav-link ${
                       activeLink === l.path ? "active" : ""
                     }`}
