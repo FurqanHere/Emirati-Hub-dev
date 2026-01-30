@@ -1,0 +1,120 @@
+
+/* Policy Pages Styles */
+.policy-hero {
+  background-color: #f8f9fa;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+.content-card {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(7, 63, 157, 0.08);
+  padding: 60px;
+  border: 1px solid rgba(7, 63, 157, 0.05);
+}
+
+.section-title {
+  color: #073F9D;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 700;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background: #FFCF40;
+  border-radius: 2px;
+}
+
+.policy-content {
+  font-family: 'Urbanist', sans-serif;
+}
+
+.policy-content p, 
+.policy-content li {
+  color: #555555;
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.policy-content h2 {
+  color: #073F9D;
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.policy-content h3 {
+  color: #073F9D;
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.policy-content ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.policy-content li {
+  margin-bottom: 10px;
+}
+
+.policy-last-updated {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 30px;
+  font-family: 'Urbanist', sans-serif;
+}
+
+/* Mobile Responsiveness for Policy Pages */
+@media (max-width: 768px) {
+  .policy-hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .content-card {
+    padding: 24px;
+    border-radius: 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .policy-content {
+    text-align: justify;
+  }
+
+  .policy-content h2 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .policy-content h3 {
+    font-size: 18px;
+  }
+
+  .policy-last-updated {
+    text-align: center;
+  }
+}

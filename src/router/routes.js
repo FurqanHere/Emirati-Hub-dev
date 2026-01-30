@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import TermsCondition from '../pages/TermsAndConditions';
+import TermsCondition from '../pages/TermsConditions';
 import Privacy from '../pages/PrivacyPolicy';
 import CancellationPolicy from "../pages/CancellationPolicy";
 import Support from "../pages/Support";

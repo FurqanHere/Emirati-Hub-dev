@@ -1,172 +1,94 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { useTranslation } from "react-i18next";
+import { Link } from 'react-router-dom';
 
-const PrivacyPolicy = () => {
-  const { t, i18n } = useTranslation();
-  const { pathname } = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  // useEffect(() => {
-  //   const currentLang = i18n.language;
-  //   const direction = currentLang === "ar" ? "rtl" : "ltr";
-  //   document.documentElement.setAttribute("dir", direction);
-  //   document.documentElement.setAttribute("lang", currentLang);
-  // }, [i18n.language]);
-
+export default function PrivacyPolicy() {
   return (
-    <>
-      <div className="privacy-bg from-top">
-        <Header background="bg-white" />
-
-        <div className="heading-policy flex-column">
-          <h1>Privacy Policy</h1>
+    <section className="policy-hero">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-10 col-xl-9">
+            <div className="content-card" data-aos="fade-up">
+              <h1 className="section-title">Privacy Policy</h1>
+              <p className="policy-last-updated">Last Updated: <strong>18/12/2024</strong></p>
+              
+              <div className="policy-content">
+                <h2 className="h4">1. Introduction</h2>
+                <p>Emirati Hub (“we,” “our,” or “us”) respects your privacy and is committed to protecting your personal data. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and website (collectively, the “App”).</p>
+                <p>By using the App, you agree to the terms of this Privacy Policy.</p>
+                
+                <h2 className="h4">2. Information We Collect</h2>
+                <p>We collect various types of information to provide and improve our services.</p>
+                
+                <h3 className="h5">2.1 Personal Information</h3>
+                <p>When you register or use the App, we may collect:</p>
+                <ul>
+                  <li><strong>Identity Data:</strong> Full name, Emirates ID details, date of birth, gender, and nationality.</li>
+                  <li><strong>Contact Data:</strong> Email address, phone number, and physical address.</li>
+                  <li><strong>Professional Data:</strong> Resume/CV, education history, work experience, skills, certifications, and job preferences.</li>
+                </ul>
+                
+                <h3 className="h5">2.2 Usage Data</h3>
+                <p>We automatically collect information about how you access and use the App, including:</p>
+                <ul>
+                  <li>Device information (model, OS version, unique device identifiers)</li>
+                  <li>IP address and location data (if permitted)</li>
+                  <li>App usage logs, clickstream data, and interaction history</li>
+                </ul>
+                
+                <h2 className="h4">3. How We Use Your Information</h2>
+                <p>We use your data for the following purposes:</p>
+                <ul>
+                  <li><strong>To Provide Services:</strong> Creating and managing accounts, processing job applications, and connecting job seekers with employers.</li>
+                  <li><strong>To Improve the App:</strong> Analyzing usage trends to enhance user experience and functionality.</li>
+                  <li><strong>Communication:</strong> Sending updates, job alerts, security notifications, and support messages.</li>
+                  <li><strong>Security & Compliance:</strong> Verifying identity (UAE National status), preventing fraud, and complying with legal obligations.</li>
+                </ul>
+                
+                <h2 className="h4">4. Sharing Your Information</h2>
+                <p>We do not sell your personal data. However, we may share your information with:</p>
+                <ul>
+                  <li><strong>Employers:</strong> When you apply for a job or make your profile visible to recruiters.</li>
+                  <li><strong>Service Providers:</strong> Third-party vendors who assist with app hosting, analytics, and customer support (under strict confidentiality agreements).</li>
+                  <li><strong>Legal Authorities:</strong> If required by law, regulation, or legal process within the UAE.</li>
+                </ul>
+                
+                <h2 className="h4">5. Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, loss, or misuse. However, no internet transmission is completely secure, and we cannot guarantee absolute security.</p>
+                
+                <h2 className="h4">6. Data Retention</h2>
+                <p>We retain your personal information only as long as necessary to fulfill the purposes outlined in this policy or as required by law. You may request account deletion at any time.</p>
+                
+                <h2 className="h4">7. Your Rights</h2>
+                <p>Depending on applicable laws, you may have the right to:</p>
+                <ul>
+                  <li>Access and update your personal information</li>
+                  <li>Request deletion of your data</li>
+                  <li>Opt-out of marketing communications</li>
+                </ul>
+                <p>To exercise these rights, please contact us at <a href="mailto:info@emirati-hub.ae">info@emirati-hub.ae</a>.</p>
+                
+                <h2 className="h4">8. Third-Party Links</h2>
+                <p>The App may contain links to third-party websites. We are not responsible for the privacy practices or content of those external sites.</p>
+                
+                <h2 className="h4">9. Changes to This Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated “Last Revised” date. Continued use of the App constitutes acceptance of the changes.</p>
+                
+                <h2 className="h4">10. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
+                <p>
+                  <strong>Emirati Hub</strong><br />
+                  📧 Email: <a href="mailto:info@emirati-hub.ae">info@emirati-hub.ae</a><br />
+                  📍 United Arab Emirates
+                </p>
+                
+                <div className="mt-5 d-flex align-items-center justify-content-center gap-3 flex-wrap">
+                  <Link to="/terms-conditions" className="btn btn-outline-primary btn-lg rounded-pill px-4" style={{ fontSize: '16px' }}>View Terms</Link>
+                  <Link to="/" className="btn btn-primary btn-lg rounded-pill px-4" style={{ backgroundColor: '#073F9D', borderColor: '#073F9D', fontSize: '16px' }}>Go Home</Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="container data-info">
-        <div className="text-center">
-          <p>Effective Date: [June 17, 2025]</p>
-          <p>
-            Website: <a href="https://gearapp.ae"> https://gearapp.ae </a>
-          </p>
-        </div>
-        <div className="privacy-heading">
-          <h3>1. Introduction</h3>
-          <p>
-            Welcome to Gear, a mobile application operated by FIRST GEAR AUTO
-            USING ELECTRONIC MEDIA RENTING VEHICLES L.L.C, a company
-            incorporated in Dubai, United Arab Emirates (“we”, “our”, or “us”).
-            This Privacy Policy outlines how we collect, use, disclose, and
-            protect your information when you use our mobile app and services.
-          </p>
-          <p className="mt-4 mb-5">
-            By using Gear (the “App”), you agree to the terms of this Privacy
-            Policy.
-          </p>
-          <h3 className="mt-5">2. Information We Collect</h3>
-          <p>
-            To provide our car rental services through the Gear app, we may
-            collect the following information:
-          </p>
-          <label>Personal Information:</label>
-          <ul>
-            <li>Full name</li>
-            <li>Email address</li>
-            <li>Phone number</li>
-            <li>
-              Government-issued ID (Emirates ID, driving license, or passport
-              for tourists)
-            </li>
-          </ul>
-          <label>Usage Data:</label>
-          <ul>
-            <li>App interaction and usage logs</li>
-            <li>IP address</li>
-            <li>Device type, OS version, and other diagnostic data</li>
-          </ul>
-          <label>Location Information:</label>
-          <ul>
-            <li>
-              With your permission, we may collect your device’s location to
-              provide relevant rental services and listings.
-            </li>
-          </ul>
-          <h3 className="mt-5">3. How We Use Your Information</h3>
-          <label>We use your personal information to:</label>
-          <ul>
-            <li>Create and manage your Gear account</li>
-            <li>Facilitate car rental bookings with third-party providers</li>
-            <li>Verify your identity and eligibility to rent a vehicle</li>
-            <li>
-              Communicate with you regarding bookings, account activity, and
-              customer support
-            </li>
-            <li>Improve and personalize the app experience</li>
-            <li>
-              Comply with legal obligations and law enforcement requirements
-            </li>
-          </ul>
-          <h3 className="mt-5">4. Sharing Your Information</h3>
-          <label>We may share your information with:</label>
-          <ul>
-            <li>
-              <strong>Third-Party Car Rental Companies:</strong> To facilitate
-              your rental booking.
-            </li>
-            <li>
-              <strong>Service Providers:</strong> Who assist with identity
-              verification, cloud storage, analytics, or customer support.
-            </li>
-            <li>
-              <strong>Regulatory Authorities:</strong>
-              If required by law or legal proceedings in the UAE.
-            </li>
-          </ul>
-          <h3 className="mt-5">5. Data Security</h3>
-          <p>
-            We take appropriate technical and organizational measures to secure
-            your personal data. While we strive to use commercially acceptable
-            means to protect your information, no method of transmission over
-            the Internet is 100% secure.
-          </p>
-          <h3 className="mt-5">6. Data Retention</h3>
-          <p>
-            We retain your personal data only for as long as necessary to
-            fulfill the purposes outlined in this policy, comply with legal
-            obligations, resolve disputes, and enforce our agreements.
-          </p>
-          <h3 className="mt-5">7. Your Rights</h3>
-          <label>
-            Depending on the laws applicable in the UAE, you may have the right
-            to:
-          </label>
-          <ul>
-            <li>Access, update, or delete your personal information</li>
-            <li>Withdraw consent (where processing is based on consent)</li>
-            <li>Request a copy of your data</li>
-            <p>
-              To exercise these rights, please contact us at
-              business@gearapp.ae.
-            </p>
-          </ul>
-          <h3 className="mt-5">8. Children’s Privacy</h3>
-          <p>
-            Our services are not intended for use by individuals under the age
-            of 18. We do not knowingly collect personal data from children under
-            18 years of age.
-          </p>
-          <h3 className="mt-5">9. Changes to This Privacy Policy</h3>
-          <p>
-            We may update this Privacy Policy from time to time. Any changes
-            will be posted on this page with a revised “Effective Date.” We
-            encourage you to review this policy periodically.
-          </p>
-          <h3 className="mt-5">10. Contact Us</h3>
-          <p>
-            If you have any questions or concerns about this Privacy Policy or
-            our data practices, please contact us at:
-          </p>
-          <strong style={{ color: "#6b6b6b" }}>
-            FIRST GEAR AUTO USING ELECTRONIC MEDIA RENTING VEHICLES L.L.C
-          </strong>
-          <p>
-            Email: <strong> business@gearapp.ae</strong>
-          </p>
-          <p>Location: Dubai, United Arab Emirates</p>
-          <span>Website:</span><a href="https://gearapp.ae"> https://gearapp.ae </a>
-        </div>
-      </div>
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </section>
   );
-};
-
-export default PrivacyPolicy;
+}

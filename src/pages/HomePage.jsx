@@ -425,7 +425,7 @@ const HomePage = () => {
         <div className="row align-items-center">
           {/* Left Column */}
           <div
-            className="col-lg-6 company-app-section-left-column"
+            className="col-lg-6 company-app-section-left-column order-2 order-lg-1"
             data-aos="fade-right"
             data-aos-delay="100"
           >
@@ -439,7 +439,7 @@ const HomePage = () => {
 
           {/* Right Column */}
           <div
-            className="col-lg-6 position-relative"
+            className="col-lg-6 position-relative order-1 order-lg-2 mb-5 mb-lg-0"
             data-aos="fade-left"
             data-aos-delay="200"
           >

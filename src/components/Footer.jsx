@@ -43,6 +43,17 @@ const Footer = () => {
             {t("footer.mainText")}
           </p>
 
+          <div className="text-center" data-aos="fade-up" data-aos-delay="250">
+            <a 
+              href="https://www.devicebee.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              style={{ color: '#0E4593', textDecoration: 'none', cursor: 'default' }}
+            >
+              Best App Development Company Dubai
+            </a>
+          </div>
+
           {/* Navigation Links */}
           <nav className="footer-nav-links" data-aos="fade-up" data-aos-delay="300">
             <button 
