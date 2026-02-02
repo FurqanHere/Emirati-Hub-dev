@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './assets/css/base.css';
 import './assets/css/policy.css';
+import './assets/css/text-animations.css';
 import AOS from "aos";
 import "aos/dist/aos.css";
 

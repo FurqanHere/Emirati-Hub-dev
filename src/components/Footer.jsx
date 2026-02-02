@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import AnimatedText from "./AnimatedText";
 import logo from "../assets/images/logo.png";
 import footerLeftAngle from "../assets/images/fooyer-left-angle.png";
 import footerRightAngle from "../assets/images/footer-right-angle.png";
@@ -34,16 +35,20 @@ const Footer = () => {
       <div className="container py-5">
         {/* Logo and Company Name */}
         <div className="text-center mb-4">
-          <div className="d-flex align-items-center justify-content-center gap-3 mb-3" data-aos="fade-up" data-aos-delay="100">
+          <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
             <img src={logo} alt="EMIRATI HUB" className="footer-logo" />
           </div>
           
           {/* Main Text Block */}
-          <p className="footer-main-text" data-aos="fade-up" data-aos-delay="200">
-            {t("footer.mainText")}
-          </p>
+          <div className="footer-main-text" data-aos="fade-up" data-aos-delay="200">
+            <AnimatedText 
+              text={t("footer.mainText")}
+              tag="p"
+              animationDelay={0.01}
+            />
+          </div>
 
-          <div className="text-center" data-aos="fade-up" data-aos-delay="250">
+          <div className="text-center">
             <a 
               href="https://www.devicebee.com" 
               target="_blank" 
@@ -55,7 +60,7 @@ const Footer = () => {
           </div>
 
           {/* Navigation Links */}
-          <nav className="footer-nav-links" data-aos="fade-up" data-aos-delay="300">
+          <nav className="footer-nav-links">
             <button 
               className="footer-nav-link-btn"
               onClick={() => handleSectionNavigation('home')}

@@ -34,6 +34,7 @@ import ApiService from "../services/ApiService";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
+import AnimatedText from "../components/AnimatedText";
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -109,15 +110,20 @@ const HomePage = () => {
             <div className="row align-items-center">
               <div className="col-12">
                 <div className="header-txt1 text-center">
-                  <div
-                    className=""
-                    data-aos="fade-up"
-                    data-aos-delay="100"
-                  >
+                  <div className="">
                     <h1 className="emirati-hero-heading text-white">
-                      {t("homepage.heroTitle")}
+                      <AnimatedText 
+                        text={t("homepage.heroTitle")} 
+                        tag="span" 
+                        animationDelay={0.05} 
+                      />
                       <br />
-                      {t("homepage.heroTitleii")}
+                      <AnimatedText 
+                        text={t("homepage.heroTitleii")} 
+                        tag="span" 
+                        baseIndex={t("homepage.heroTitle").length}
+                        animationDelay={0.05} 
+                      />
                     </h1>
                   </div>
                   <div
@@ -132,7 +138,7 @@ const HomePage = () => {
                   </div>
                 </div>
                 <div className="hero-visual d-none d-md-flex">
-                  <img src={ headerImg } alt="" />
+                  <img src={ headerImg } alt="" data-aos="zoom-in" data-aos-duration="1200" />
                 </div>
 
                 {/* Mobile */}
@@ -140,6 +146,8 @@ const HomePage = () => {
                   src={appSsImg}
                   className="w-100 d-block d-md-none"
                   alt=""
+                  data-aos="fade-up"
+                  data-aos-delay="200"
                 />
               </div>
             </div>
@@ -155,11 +163,19 @@ const HomePage = () => {
           data-aos-delay="100"
         >
           <h2 className="careers-section-heading">
-            {t("homepage.careersTitle")}
+            <AnimatedText 
+              text={t("homepage.careersTitle")}
+              tag="span"
+              animationDelay={0.03}
+            />
           </h2>
-          <p className="careers-section-description">
-            {t("homepage.careersDescription")}
-          </p>
+          <div className="careers-section-description">
+            <AnimatedText 
+              text={t("homepage.careersDescription")}
+              tag="p"
+              animationDelay={0.01}
+            />
+          </div>
         </div>
 
         <div className="row g-4 careers-grid">
@@ -397,6 +413,7 @@ const HomePage = () => {
                   src={employeeAppImg}
                   alt="Employee App Yellow"
                   className="phone-mockup-large"
+                  data-aos="zoom-in"
                 />
               </div>
             </div>
@@ -410,11 +427,19 @@ const HomePage = () => {
           >
             <div className="ms-5 app-section-content">
               <h2 className="app-section-title">
-                {t("homepage.employeeApp.title")}
+                <AnimatedText 
+                  text={t("homepage.employeeApp.title")}
+                  tag="span"
+                  animationDelay={0.03}
+                />
               </h2>
-              <p className="app-section-description">
-                {t("homepage.employeeApp.description")}
-              </p>
+              <div className="app-section-description">
+                <AnimatedText 
+                  text={t("homepage.employeeApp.description")}
+                  tag="p"
+                  animationDelay={0.01}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -430,11 +455,19 @@ const HomePage = () => {
             data-aos-delay="100"
           >
             <h2 className="app-section-title">
-              {t("homepage.companyApp.title")}
+              <AnimatedText 
+                text={t("homepage.companyApp.title")}
+                tag="span"
+                animationDelay={0.03}
+              />
             </h2>
-            <p className="app-section-description">
-              {t("homepage.companyApp.description")}
-            </p>
+            <div className="app-section-description">
+              <AnimatedText 
+                text={t("homepage.companyApp.description")}
+                tag="p"
+                animationDelay={0.01}
+              />
+            </div>
           </div>
 
           {/* Right Column */}
@@ -449,6 +482,7 @@ const HomePage = () => {
                   src={companyAppImg}
                   alt="Employee App Yellow"
                   className="phone-mockup-large-blue"
+                  data-aos="zoom-in"
                 />
               </div>
             </div>
@@ -472,23 +506,47 @@ const HomePage = () => {
                 src={helpAppImg}
                 alt="App Screenshot"
                 className="download-app-img"
+                data-aos="zoom-in-up"
               />
             </div>
             <div className="col-lg-7" data-aos="fade-left" data-aos-delay="200">
               <div className="download-app-content">
                 <h2 className="download-app-title">
-                  {t("homepage.downloadApp.title")}{" "}
+                  <AnimatedText 
+                    text={t("homepage.downloadApp.title")}
+                    tag="span"
+                    animationDelay={0.03}
+                  />
+                  {" "}
                   <span className="download-app-title-highlight">
                     <span className="download-app-title-highlight-only">
-                      {t("homepage.downloadApp.highlight")}
+                      <AnimatedText 
+                        text={t("homepage.downloadApp.highlight")}
+                        tag="span"
+                        animationDelay={0.03}
+                      />
                     </span>{" "}
-                    {t("homepage.downloadApp.nationalsBest")}{" "}
-                    <br className="none" /> {t("homepage.downloadApp.findJobs")}
+                    <AnimatedText 
+                      text={t("homepage.downloadApp.nationalsBest")}
+                      tag="span"
+                      animationDelay={0.03}
+                    />
+                    {" "}
+                    <br className="none" /> 
+                    <AnimatedText 
+                      text={t("homepage.downloadApp.findJobs")}
+                      tag="span"
+                      animationDelay={0.03}
+                    />
                   </span>
                 </h2>
-                <p className="download-app-description">
-                  {t("homepage.downloadApp.description")}
-                </p>
+                <div className="download-app-description">
+                  <AnimatedText 
+                    text={t("homepage.downloadApp.description")}
+                    tag="p"
+                    animationDelay={0.01}
+                  />
+                </div>
                 <div className="download-app-buttons">
                   {/* <a
                     href="https://apps.apple.com/ae/app/emiratihub/id6753808339"
