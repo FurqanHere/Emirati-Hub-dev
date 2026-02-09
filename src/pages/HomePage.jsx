@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import MobileScrollSlideshow from "../components/MobileScrollSlideshow";
 
 import crownImg from "../assets/images/crown.png";
 import headerImg from "../assets/images/header-main-img.png";
-import appSsImg from "../assets/images/app-ss.png";
 
 import marketingImg from "../assets/images/marketing.png";
 import designImg from "../assets/images/design.png";
@@ -142,13 +142,7 @@ const HomePage = () => {
                 </div>
 
                 {/* Mobile */}
-                <img
-                  src={appSsImg}
-                  className="w-100 d-block d-md-none"
-                  alt=""
-                  data-aos="fade-up"
-                  data-aos-delay="200"
-                />
+                <MobileScrollSlideshow />
               </div>
             </div>
           </div>

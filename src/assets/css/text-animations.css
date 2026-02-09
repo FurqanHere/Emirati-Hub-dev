@@ -14,7 +14,6 @@
 .animated-text-wrapper.aos-animate .animated-char {
   animation: charFadeIn 0.5s ease-out forwards;
   animation-delay: var(--char-delay, 0s);
-  /* Fallback if calc() in delay isn't supported in some context, though it should be */
   animation-delay: calc(var(--char-index) * var(--char-delay));
 }
 

@@ -29,7 +29,7 @@ function App() {
        duration: 1000, 
        once: true,
        offset: 100,
-       disable: window.innerWidth < 768 ? false : false // Enable on mobile too
+       disable: window.innerWidth < 768 ? false : false
      });
 
 }, []);
