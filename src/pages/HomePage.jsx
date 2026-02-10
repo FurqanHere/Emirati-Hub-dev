@@ -35,6 +35,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useTranslation } from "react-i18next";
 import AnimatedText from "../components/AnimatedText";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/autoplay';
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -56,7 +60,21 @@ const HomePage = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const careers = [
+    { img: marketingImg, title: "homepage.careers.marketing", count: 1542, colorClass: "career-icon-marketing" },
+    { img: designImg, title: "homepage.careers.design", count: 748, colorClass: "career-icon-design" },
+    { img: humsnImg, title: "homepage.careers.humanResearch", count: 290, colorClass: "career-icon-humsn" },
+    { img: financeImg, title: "homepage.careers.finance", count: 349, colorClass: "career-icon-finance" },
+    { img: healthImg, title: "homepage.careers.healthcare", count: 1542, colorClass: "career-icon-health" },
+    { img: armforceguideImg, title: "homepage.careers.armforce", count: 748, colorClass: "career-icon-armforce" },
+    { img: businessImg, title: "homepage.careers.business", count: 290, colorClass: "career-icon-business" },
+    { img: legalImg, title: "homepage.careers.legal", count: 349, colorClass: "career-icon-legal" },
+    { img: airportImg, title: "homepage.careers.airport", count: 748, colorClass: "career-icon-airport" },
+    { img: projectImg, title: "homepage.careers.project", count: 290, colorClass: "career-icon-project" },
+    { img: manufactureImg, title: "homepage.careers.manufacture", count: 349, colorClass: "career-icon-manufacture" },
+  ];
+
+  return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const svgRef = useRef(null);
@@ -99,6 +117,28 @@ const HomePage = () => {
       });
     }
   }, [location]);
+
+  const careers = [
+    { img: marketingImg, title: "homepage.careers.marketing", count: 1542, colorClass: "career-icon-marketing" },
+    { img: designImg, title: "homepage.careers.design", count: 748, colorClass: "career-icon-design" },
+    { img: humsnImg, title: "homepage.careers.humanResearch", count: 290, colorClass: "career-icon-humsn" },
+    { img: financeImg, title: "homepage.careers.finance", count: 349, colorClass: "career-icon-finance" },
+    { img: healthImg, title: "homepage.careers.healthcare", count: 1542, colorClass: "career-icon-health" },
+    { img: armforceguideImg, title: "homepage.careers.armforce", count: 748, colorClass: "career-icon-armforce" },
+    { img: businessImg, title: "homepage.careers.business", count: 290, colorClass: "career-icon-business" },
+    { img: legalImg, title: "homepage.careers.legal", count: 349, colorClass: "career-icon-legal" },
+    { img: airportImg, title: "homepage.careers.airport", count: 748, colorClass: "career-icon-airport" },
+    { img: projectImg, title: "homepage.careers.project", count: 290, colorClass: "career-icon-project" },
+    { img: manufactureImg, title: "homepage.careers.manufacture", count: 349, colorClass: "career-icon-manufacture" },
+  ];
+
+  const chunkArray = (arr, size) => {
+    return Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+      arr.slice(i * size, i * size + size)
+    );
+  };
+
+  const careerChunks = chunkArray(careers, 2);
 
   return (
     <>
@@ -172,223 +212,88 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="row g-4 careers-grid">
-          {/* Row 1 */}
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
+        {/* Mobile Slider */}
+        <div className="d-lg-none">
+          <Swiper
+            modules={[Autoplay]}
+            spaceBetween={24}
+            slidesPerView={1.2}
+            loop={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              576: {
+                slidesPerView: 2,
+              },
+              768: {
+                slidesPerView: 3,
+              },
+            }}
+            className="careers-swiper"
           >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-marketing">
-                <img
-                  src={marketingImg}
-                  alt="Marketing"
-                  className="career-icon"
-                />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.marketing")}
-                </h5>
-                <p className="career-jobs">
-                  1542 {t("homepage.jobsAvailable")}
-                </p>
-              </div>
-            </div>
-          </div>
+            {careerChunks.map((chunk, chunkIndex) => (
+              <SwiperSlide key={chunkIndex}>
+                <div className="d-flex flex-column gap-4 h-100">
+                  {chunk.map((career, index) => (
+                    <div
+                      key={index}
+                      className="career-card"
+                      data-aos="fade-up"
+                      data-aos-delay={(chunkIndex * 2 + index) * 50}
+                    >
+                      <div className={`career-icon-wrapper ${career.colorClass}`}>
+                        <img
+                          src={career.img}
+                          alt={t(career.title)}
+                          className="career-icon"
+                        />
+                      </div>
+                      <div className="career-content">
+                        <h5 className="career-title">
+                          {t(career.title)}
+                        </h5>
+                        <p className="career-jobs">
+                          {career.count} {t("homepage.jobsAvailable")}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="250"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-design">
-                <img src={designImg} alt="Design" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">{t("homepage.careers.design")}</h5>
-                <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-humsn">
-                <img
-                  src={humsnImg}
-                  alt="Human Research"
-                  className="career-icon"
-                />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.humanResearch")}
-                </h5>
-                <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
+        {/* Desktop Grid */}
+        <div className="row g-4 d-none d-lg-flex justify-content-center">
+          {careers.map((career, index) => (
+            <div 
+              key={index} 
+              className="col-lg-3 col-md-4 col-sm-6"
+              data-aos="fade-up"
+              data-aos-delay={index * 50}
+            >
+              <div className="career-card h-100">
+                <div className={`career-icon-wrapper ${career.colorClass}`}>
+                  <img
+                    src={career.img}
+                    alt={t(career.title)}
+                    className="career-icon"
+                  />
+                </div>
+                <div className="career-content">
+                  <h5 className="career-title">
+                    {t(career.title)}
+                  </h5>
+                  <p className="career-jobs">
+                    {career.count} {t("homepage.jobsAvailable")}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="350"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-finance">
-                <img src={financeImg} alt="Finance" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.finance")}
-                </h5>
-                <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-health">
-                <img src={healthImg} alt="Healthcare" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.healthcare")}
-                </h5>
-                <p className="career-jobs">
-                  1542 {t("homepage.jobsAvailable")}
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="450"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-armforce">
-                <img
-                  src={armforceguideImg}
-                  alt="Armforce"
-                  className="career-icon"
-                />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.armforce")}
-                </h5>
-                <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="500"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-business">
-                <img src={businessImg} alt="Business" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.business")}
-                </h5>
-                <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="550"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-legal">
-                <img src={legalImg} alt="Legal" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">{t("homepage.careers.legal")}</h5>
-                <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Row 3 (flattened for mobile slider) */}
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-airport">
-                <img src={airportImg} alt="Airport" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.airport")}
-                </h5>
-                <p className="career-jobs">748 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="650"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-project">
-                <img src={projectImg} alt="Project" className="career-icon" />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.project")}
-                </h5>
-                <p className="career-jobs">290 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
-
-          <div
-            className="col-md-3 col-sm-6"
-            data-aos="fade-up"
-            data-aos-delay="700"
-          >
-            <div className="career-card">
-              <div className="career-icon-wrapper career-icon-manufacture">
-                <img
-                  src={manufactureImg}
-                  alt="Manufacture"
-                  className="career-icon"
-                />
-              </div>
-              <div className="career-content">
-                <h5 className="career-title">
-                  {t("homepage.careers.manufacture")}
-                </h5>
-                <p className="career-jobs">349 {t("homepage.jobsAvailable")}</p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -511,7 +416,7 @@ const HomePage = () => {
                     tag="span"
                     animationDelay={0.03}
                   />
-                  {" "}
+                  
                   <span className="download-app-title-highlight">
                     <span className="download-app-title-highlight-only">
                       <AnimatedText 
@@ -519,13 +424,13 @@ const HomePage = () => {
                         tag="span"
                         animationDelay={0.03}
                       />
-                    </span>{" "}
+                    </span>
                     <AnimatedText 
                       text={t("homepage.downloadApp.nationalsBest")}
                       tag="span"
                       animationDelay={0.03}
                     />
-                    {" "}
+                    
                     <br className="none" /> 
                     <AnimatedText 
                       text={t("homepage.downloadApp.findJobs")}

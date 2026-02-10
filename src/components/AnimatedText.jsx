@@ -11,22 +11,49 @@ const AnimatedText = ({
 }) => {
   if (!text) return null;
   
-  const chars = text.split('');
+  const words = text.split(' ');
+  let globalCharIndex = baseIndex;
 
   return (
     <Tag className={`animated-text-wrapper ${className}`} data-aos={aosType}>
-      {chars.map((char, index) => (
-        <span
-          key={index}
-          className="animated-char"
-          style={{ 
-            '--char-index': baseIndex + index,
-            '--char-delay': `${animationDelay}s`
-          }}
-        >
-          {char === ' ' ? '\u00A0' : char}
-        </span>
-      ))}
+      {words.map((word, wordIndex) => {
+        const wordChars = word.split('');
+        const currentWordStartIndex = globalCharIndex;
+        // Increment global index for this word's length + 1 for the space (unless it's the last word)
+        globalCharIndex += word.length + 1;
+
+        return (
+          <React.Fragment key={wordIndex}>
+            <span style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+              {wordChars.map((char, charIndex) => (
+                <span
+                  key={charIndex}
+                  className="animated-char"
+                  style={{
+                    '--char-index': currentWordStartIndex + charIndex,
+                    '--char-delay': `${animationDelay}s`,
+                    display: 'inline-block'
+                  }}
+                >
+                  {char}
+                </span>
+              ))}
+            </span>
+            {wordIndex < words.length - 1 && (
+              <span
+                className="animated-char"
+                style={{
+                  '--char-index': currentWordStartIndex + word.length,
+                  '--char-delay': `${animationDelay}s`,
+                  display: 'inline'
+                }}
+              >
+                &nbsp;
+              </span>
+            )}
+          </React.Fragment>
+        );
+      })}
     </Tag>
   );
 };

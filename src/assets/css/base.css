@@ -1127,6 +1127,8 @@ html {
     font-size: 16px !important;
     line-height: 24px !important;
     text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
   }
 
   .download-app-buttons {
@@ -1498,17 +1500,15 @@ html {
   }
 
   .footer-contact-info {
-  gap: 10px;
-}
-
-.footer-contact-item {
-  gap: 5px;
-  font-size: 16px;
-}
-
-  .footer-contact-info {
+    gap: 10px;
     align-items: center;
     margin-bottom: 15px;
+    justify-content: center;
+  }
+
+  .footer-contact-item {
+    gap: 5px;
+    font-size: 16px;
   }
 
   .footer-policy-links {

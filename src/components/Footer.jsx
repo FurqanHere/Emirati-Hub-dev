@@ -107,7 +107,7 @@ const Footer = () => {
               </p>
             </div>
             <div className="col-md-6 col-12">
-              <div className="d-flex flex-column align-items-end gap-3">
+              <div className="d-flex flex-column align-items-center align-items-md-end gap-3">
                 {/* Contact Information - Row 1 */}
                 <div className="footer-contact-info">
                   <a 
